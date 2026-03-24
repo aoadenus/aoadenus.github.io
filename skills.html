@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills · Tutu Adenusi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .sk-hero{background:var(--cream);padding:9rem 3.5rem 4rem;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+    .skb1{width:400px;height:400px;background:rgba(196,160,255,.15);top:-80px;right:0;animation:blob 12s ease-in-out infinite alternate}
+    .sk-hero-inner{position:relative;z-index:2;max-width:680px}
+    .sk-hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,6rem);font-weight:900;color:var(--plum);line-height:1.1;margin-bottom:1.4rem}
+    .sk-hero h1 em{font-style:italic;color:var(--violet)}
+    .sk-hero p{font-size:1rem;color:var(--muted);line-height:1.8;max-width:480px;font-weight:300}
+
+    /* SKILLS TABLE */
+    .sk-body{padding:4rem 3.5rem}
+    .sk-table{border:1.5px solid var(--border);border-radius:24px;overflow:hidden;margin-bottom:4rem}
+    .sk-row{display:grid;grid-template-columns:220px 1fr;border-bottom:1px solid var(--border);transition:background .2s}
+    .sk-row:last-child{border-bottom:none}
+    .sk-row:hover{background:var(--ll)}
+    .sk-cat{padding:2rem 2.5rem;font-family:'Syne',sans-serif;font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--violet);display:flex;align-items:center;border-right:1px solid var(--border);background:rgba(240,232,255,.4)}
+    .sk-items{padding:2rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+    .chip{font-family:'Syne',sans-serif;font-size:.76rem;font-weight:600;padding:.38rem .9rem;border-radius:100px;transition:all .2s;border:1.5px solid transparent}
+    .chip:hover{transform:scale(1.05)}
+    .c-default{background:var(--ll);color:var(--ps);border-color:var(--lm)}
+    .c-lang{background:var(--mint);color:#1a6b4a;border-color:rgba(94,203,161,.4)}
+    .c-ent{background:var(--peach);color:#9a4020;border-color:rgba(245,168,130,.4)}
+    .c-concept{background:var(--sky);color:#1a4a8a;border-color:rgba(142,181,232,.4)}
+    .c-cert{background:var(--yellow);color:#7a5c0a;border-color:rgba(232,208,122,.4)}
+
+    /* CERT SECTION */
+    .cert-section{padding:0 3.5rem 4rem}
+    .cert-card{background:var(--plum);border-radius:24px;padding:3rem;display:flex;align-items:center;gap:2.5rem;max-width:700px}
+    .cert-icon-big{font-size:3.5rem}
+    .cert-name{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:#fff;margin-bottom:.4rem;line-height:1.2}
+    .cert-issuer{font-family:'Syne',sans-serif;font-size:.82rem;color:var(--lm);font-weight:600;letter-spacing:.04em}
+    .cert-date{font-family:'Syne',sans-serif;font-size:.75rem;color:rgba(255,255,255,.4);margin-top:.3rem}
+
+    @media(max-width:900px){.sk-hero,.sk-body,.cert-section{padding-left:1.5rem;padding-right:1.5rem}.sk-row{grid-template-columns:1fr}.sk-cat{border-right:none;border-bottom:1px solid var(--border)}.cert-card{flex-direction:column;gap:1.5rem}}
+  </style>
+</head>
+<body>
+<div id="cur"></div>
+<nav>
+  <a href="index.html" class="logo">Tutu ✦</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="skills.html" class="active">Skills</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="sk-hero">
+    <div class="blob skb1"></div>
+    <div class="sk-hero-inner">
+      <div class="eyebrow anim anim-1">04 — Skills</div>
+      <h1 class="anim anim-2">What I <em>Know.</em></h1>
+      <p class="anim anim-3">From SAP enterprise systems to REST APIs, database design to data visualization — my technical toolkit spans the full intersection of business and technology.</p>
+    </div>
+  </div>
+
+  <div class="sk-body">
+    <div class="eyebrow reveal" style="margin-bottom:1.5rem">Technical Skills</div>
+    <div class="sk-table reveal">
+      <div class="sk-row">
+        <div class="sk-cat">Languages</div>
+        <div class="sk-items">
+          <span class="chip c-lang">Python</span>
+          <span class="chip c-lang">SQL</span>
+          <span class="chip c-lang">JavaScript</span>
+          <span class="chip c-lang">HTML / CSS</span>
+        </div>
+      </div>
+      <div class="sk-row">
+        <div class="sk-cat">Frameworks &amp; Tools</div>
+        <div class="sk-items">
+          <span class="chip c-default">FastAPI</span>
+          <span class="chip c-default">Streamlit</span>
+          <span class="chip c-default">Chart.js</span>
+          <span class="chip c-default">Plotly</span>
+          <span class="chip c-default">Tableau</span>
+          <span class="chip c-default">SQLite</span>
+          <span class="chip c-default">GitHub</span>
+          <span class="chip c-default">pandas</span>
+          <span class="chip c-default">NumPy</span>
+        </div>
+      </div>
+      <div class="sk-row">
+        <div class="sk-cat">Enterprise &amp; Business Systems</div>
+        <div class="sk-items">
+          <span class="chip c-ent">SAP S/4HANA (FICO)</span>
+          <span class="chip c-ent">SAP Activate</span>
+          <span class="chip c-ent">OPERA PMS</span>
+          <span class="chip c-ent">IHG Merlin</span>
+          <span class="chip c-ent">Hilton OnQ</span>
+          <span class="chip c-ent">Wyndham SynXis</span>
+        </div>
+      </div>
+      <div class="sk-row">
+        <div class="sk-cat">Concepts</div>
+        <div class="sk-items">
+          <span class="chip c-concept">Systems Analysis &amp; Design</span>
+          <span class="chip c-concept">Data Validation</span>
+          <span class="chip c-concept">Database Design</span>
+          <span class="chip c-concept">Network Analysis</span>
+          <span class="chip c-concept">REST API Development</span>
+          <span class="chip c-concept">UAT</span>
+          <span class="chip c-concept">ERD Design</span>
+          <span class="chip c-concept">Process Documentation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cert-section reveal">
+    <div class="eyebrow" style="margin-bottom:1.5rem">Certification</div>
+    <div class="cert-card hoverable">
+      <div class="cert-icon-big">🏅</div>
+      <div>
+        <div class="cert-name">SAP Learning Journey:<br/>Discovering SAP</div>
+        <div class="cert-issuer">Issued by SAP</div>
+        <div class="cert-date">March 2026</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span class="footer-left">Tutu Adenusi</span>
+  <ul class="footer-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Adetutu Adenusi · University of Houston · B.S. Computer Information Systems · Class of 2027</div>
+</footer>
+<script>
+  const cur=document.getElementById('cur');let mx=0,my=0,cx=0,cy=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+  (function tick(){cx+=(mx-cx)*.15;cy+=(my-cy)*.15;cur.style.left=cx+'px';cur.style.top=cy+'px';requestAnimationFrame(tick)})();
+  document.querySelectorAll('a,button,.hoverable,.chip').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'))});
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.08});
+  document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(r=>obs.observe(r));
+</script>
+</body>
+</html>

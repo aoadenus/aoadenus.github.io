@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Experience · Tutu Adenusi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .exp-hero{background:var(--plum);padding:9rem 3.5rem 5rem;position:relative;overflow:hidden}
+    .eb1{width:550px;height:550px;background:rgba(139,92,246,.2);top:-120px;right:-100px;animation:blob 14s ease-in-out infinite alternate}
+    .eb2{width:300px;height:300px;background:rgba(194,245,232,.08);bottom:-50px;left:-50px;animation:blob 18s ease-in-out infinite alternate-reverse}
+    .exp-hero-inner{position:relative;z-index:2;max-width:650px}
+    .exp-hero h1{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,7vw,7rem);font-weight:900;color:#fff;line-height:.92;margin-bottom:1.5rem}
+    .exp-hero h1 em{font-style:italic;color:var(--lm);display:block}
+    .exp-hero p{font-size:1rem;color:rgba(255,255,255,.5);line-height:1.8;max-width:480px;font-weight:300}
+
+    /* TIMELINE */
+    .timeline-wrap{padding:5rem 3.5rem;background:var(--cream)}
+    .tl-inner{max-width:900px;margin:0 auto;position:relative}
+    .tl-inner::before{content:'';position:absolute;left:200px;top:0;bottom:0;width:1px;background:var(--border)}
+
+    .tl-entry{display:grid;grid-template-columns:180px 60px 1fr;align-items:start;margin-bottom:5rem;position:relative}
+    .tl-entry:last-child{margin-bottom:0}
+
+    .tl-left{text-align:right;padding-right:1.5rem;padding-top:.4rem}
+    .tl-dates{font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;color:var(--violet);letter-spacing:.04em;line-height:1.5}
+    .tl-dur{font-family:'Syne',sans-serif;font-size:.7rem;color:var(--muted);margin-top:.25rem}
+
+    .tl-mid{display:flex;flex-direction:column;align-items:center;padding-top:.35rem}
+    .tl-dot{width:16px;height:16px;border-radius:50%;background:var(--violet);border:3px solid var(--cream);box-shadow:0 0 0 3px var(--lm);flex-shrink:0;z-index:1}
+    .tl-connector{flex:1;width:1px;background:var(--border);margin-top:.5rem;min-height:40px}
+
+    .tl-right{padding-left:2.5rem;padding-bottom:3rem}
+    .tl-company-type{font-family:'Syne',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+    .tl-role{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--plum);margin-bottom:.3rem;line-height:1.1}
+    .tl-company{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:700;color:var(--violet);margin-bottom:1.5rem;letter-spacing:.02em}
+    .tl-bullets{list-style:none}
+    .tl-bullets li{font-size:.9rem;color:var(--muted);line-height:1.75;padding-left:1.4rem;position:relative;margin-bottom:.7rem}
+    .tl-bullets li::before{content:'—';position:absolute;left:0;color:var(--violet);font-weight:700}
+
+    /* COLOR ACCENT BAR */
+    .tl-right{border-left:3px solid transparent;transition:border-color .3s}
+    .tl-entry:hover .tl-right{border-left-color:var(--violet)}
+    .tl-entry:nth-child(2):hover .tl-right{border-left-color:#5ECBA1}
+    .tl-entry:nth-child(3):hover .tl-right{border-left-color:#f5a882}
+    .tl-entry:nth-child(4):hover .tl-right{border-left-color:#8eb5e8}
+
+    /* ORGS STRIP */
+    .orgs-strip{background:var(--ll);padding:4rem 3.5rem;border-top:1px solid var(--border)}
+    .orgs-strip h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--plum);margin-bottom:2rem}
+    .orgs-strip h2 em{font-style:italic;color:var(--violet)}
+    .orgs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+    .org-card{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:1.4rem 1.6rem;display:flex;gap:1rem;align-items:flex-start;transition:all .22s}
+    .org-card:hover{border-color:var(--lm);transform:translateY(-3px);box-shadow:0 10px 30px rgba(139,92,246,.08)}
+    .org-icon{font-size:1.5rem;flex-shrink:0}
+    .org-name{font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;color:var(--plum);line-height:1.3}
+    .org-sub{font-size:.76rem;color:var(--muted);margin-top:.2rem}
+
+    @media(max-width:900px){.exp-hero{padding:7rem 1.5rem 4rem}.timeline-wrap,.orgs-strip{padding:4rem 1.5rem}.tl-inner::before{display:none}.tl-entry{grid-template-columns:1fr;gap:.5rem}.tl-left{text-align:left;padding-right:0}.tl-mid{display:none}.tl-right{padding-left:0;border-left:3px solid var(--lm)}}
+  </style>
+</head>
+<body>
+<div id="cur"></div>
+<nav>
+  <a href="index.html" class="logo">Tutu ✦</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="experience.html" class="active">Experience</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section class="exp-hero">
+    <div class="blob eb1"></div>
+    <div class="blob eb2"></div>
+    <div class="exp-hero-inner">
+      <div class="eyebrow eyebrow-light anim anim-1">03 — Experience</div>
+      <h1 class="anim anim-2">Where I've<em>Been.</em></h1>
+      <p class="anim anim-3">From SAP enterprise implementation at Accellux to hospitality operations — every role sharpened my instinct for systems, data accuracy, and process improvement.</p>
+    </div>
+  </section>
+
+  <section class="timeline-wrap">
+    <div class="tl-inner">
+
+      <div class="tl-entry reveal">
+        <div class="tl-left">
+          <div class="tl-dates">Mar 2024<br/>Mar 2025</div>
+          <div class="tl-dur">1 year 1 month</div>
+        </div>
+        <div class="tl-mid"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+        <div class="tl-right">
+          <div class="tl-company-type">Enterprise Technology · Part-time</div>
+          <div class="tl-role">Student Intern</div>
+          <div class="tl-company">Accellux · Greater Houston, TX</div>
+          <ul class="tl-bullets">
+            <li>Supported SAP S/4HANA FICO implementation for enterprise clients including Halliburton and Siemens, contributing to financial data extraction, report validation, and system testing aligned with SAP Activate methodology.</li>
+            <li>Contributed to process documentation and system testing cycles to ensure data accuracy and readiness across multi-client deployment phases.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-entry reveal">
+        <div class="tl-left">
+          <div class="tl-dates">Jun 2024<br/>Dec 2024</div>
+          <div class="tl-dur">7 months</div>
+        </div>
+        <div class="tl-mid"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+        <div class="tl-right">
+          <div class="tl-company-type">Hospitality · Full-time</div>
+          <div class="tl-role">Front Desk Attendant</div>
+          <div class="tl-company">IHG Hotels &amp; Resorts · Houston, TX</div>
+          <ul class="tl-bullets">
+            <li>Managed 50+ daily check-ins through IHG Merlin, OPERA PMS, and Holidex, maintaining 95%+ guest satisfaction scores in post-stay surveys.</li>
+            <li>Partnered with management to implement a workflow update that reduced guest wait times by 15% and improved service consistency across shifts.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-entry reveal">
+        <div class="tl-left">
+          <div class="tl-dates">Mar 2024<br/>May 2024</div>
+          <div class="tl-dur">3 months</div>
+        </div>
+        <div class="tl-mid"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+        <div class="tl-right">
+          <div class="tl-company-type">Hospitality · Full-time</div>
+          <div class="tl-role">Night Auditor</div>
+          <div class="tl-company">Home2 Suites by Hilton · Katy, TX</div>
+          <ul class="tl-bullets">
+            <li>Reconciled nightly financial transactions totaling $20K+ per shift using Hilton OnQ and OPERA PMS, improving end-of-day reporting accuracy by 10% through variance identification and correction.</li>
+            <li>Provided after-hours technical troubleshooting for front-office systems and ensured seamless handoff to morning operations.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-entry reveal">
+        <div class="tl-left">
+          <div class="tl-dates">Jan 2023<br/>Oct 2023</div>
+          <div class="tl-dur">10 months</div>
+        </div>
+        <div class="tl-mid"><div class="tl-dot"></div></div>
+        <div class="tl-right">
+          <div class="tl-company-type">Hospitality · Part-time</div>
+          <div class="tl-role">Front Desk Agent</div>
+          <div class="tl-company">La Quinta Inn &amp; Suites by Wyndham · Brookshire, TX</div>
+          <ul class="tl-bullets">
+            <li>Managed front desk operations for a 120-room property including guest payments, check-ins, and loyalty program enrollments while maintaining accurate CRM and reservation records.</li>
+            <li>Collaborated with housekeeping and maintenance teams using Wyndham SynXis to improve service coordination and reduce response times.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="orgs-strip reveal">
+    <div class="eyebrow">Leadership &amp; Community</div>
+    <h2>Organizations &amp;<br/><em>Volunteering</em></h2>
+    <div class="orgs-grid">
+      <div class="org-card hoverable"><span class="org-icon">⚙️</span><div><div class="org-name">National Society of Black Engineers (NSBE)</div><div class="org-sub">Member · University of Houston</div></div></div>
+      <div class="org-card hoverable"><span class="org-icon">🔭</span><div><div class="org-name">Future Information Technology Professionals (FITP)</div><div class="org-sub">Member · Jan 2025 – Present · University of Houston</div></div></div>
+      <div class="org-card hoverable"><span class="org-icon">🏨</span><div><div class="org-name">Hospitality Financial &amp; Technology Professionals (HFTP-CC)</div><div class="org-sub">Member · UH Cougar Chapter</div></div></div>
+      <div class="org-card hoverable"><span class="org-icon">💻</span><div><div class="org-name">Rewriting The Code (RTC)</div><div class="org-sub">Member · Oct 2025 – Present · Supporting women in tech</div></div></div>
+      <div class="org-card hoverable"><span class="org-icon">🤝</span><div><div class="org-name">Houston Food Bank</div><div class="org-sub">Student Volunteer · Jan 2025 – Present · Food sorting, packing &amp; distribution</div></div></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span class="footer-left">Tutu Adenusi</span>
+  <ul class="footer-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Adetutu Adenusi · University of Houston · B.S. Computer Information Systems · Class of 2027</div>
+</footer>
+<script>
+  const cur=document.getElementById('cur');let mx=0,my=0,cx=0,cy=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+  (function tick(){cx+=(mx-cx)*.15;cy+=(my-cy)*.15;cur.style.left=cx+'px';cur.style.top=cy+'px';requestAnimationFrame(tick)})();
+  document.querySelectorAll('a,button,.hoverable,.org-card').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'))});
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.08});
+  document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(r=>obs.observe(r));
+</script>
+</body>
+</html>

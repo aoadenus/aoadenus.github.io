@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects · Tutu Adenusi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .proj-hero{background:var(--cream);padding:9rem 3.5rem 4rem;border-bottom:1px solid var(--border)}
+    .ph-inner{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:2rem}
+    .ph-h{font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,6rem);font-weight:900;color:var(--plum);line-height:.92;margin-bottom:1rem}
+    .ph-h em{font-style:italic;color:var(--violet);display:block}
+    .ph-desc{font-size:.95rem;color:var(--muted);line-height:1.8;max-width:360px;font-weight:300}
+    .gh-link{font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;color:var(--violet);text-decoration:none;border:2px solid var(--lm);padding:.65rem 1.4rem;border-radius:100px;transition:all .2s;white-space:nowrap}
+    .gh-link:hover{background:var(--violet);color:#fff;border-color:var(--violet)}
+
+    /* PROJECT GRID */
+    .proj-list{padding:4rem 3.5rem 6rem;display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+
+    .pcard{border:1.5px solid var(--border);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+    .pcard:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(139,92,246,.1)}
+
+    .pcard-visual{min-height:180px;display:flex;align-items:center;justify-content:center;position:relative;padding:2rem}
+    .pcard:nth-child(1) .pcard-visual{background:linear-gradient(135deg,var(--mint) 0%,var(--sky) 100%)}
+    .pcard:nth-child(2) .pcard-visual{background:linear-gradient(135deg,var(--lilac) 0%,var(--lm) 100%)}
+    .pcard:nth-child(3) .pcard-visual{background:linear-gradient(135deg,var(--peach) 0%,var(--rose) 100%)}
+    .pcard:nth-child(4) .pcard-visual{background:linear-gradient(135deg,var(--sky) 0%,var(--mint) 100%)}
+    .pcard:nth-child(5) .pcard-visual{background:linear-gradient(135deg,var(--yellow) 0%,var(--peach) 100%)}
+    .pcard:nth-child(6) .pcard-visual{background:linear-gradient(135deg,var(--lm) 0%,var(--lilac) 100%)}
+
+    .pcard-icon{font-size:3rem;position:relative;z-index:2}
+    .pcard-season-badge{font-family:'Syne',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,255,255,.5);color:var(--plum);padding:.3rem .9rem;border-radius:100px;position:absolute;top:1.2rem;left:1.2rem}
+    .pcard-num-bg{font-family:'Playfair Display',serif;font-size:5rem;font-weight:900;color:rgba(255,255,255,.2);line-height:1;position:absolute;bottom:.5rem;right:1rem}
+
+    .pcard-body{padding:1.8rem 2rem 2rem;display:flex;flex-direction:column;flex:1}
+    .pcard-season{font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+    .pcard-title{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:700;color:var(--plum);line-height:1.2;margin-bottom:.9rem}
+    .pcard-desc{font-size:.88rem;color:var(--muted);line-height:1.75;margin-bottom:1.2rem;flex:1}
+    .ptags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.4rem}
+    .ptag{font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;padding:.3rem .8rem;border-radius:8px;letter-spacing:.02em}
+    .pt-v{background:rgba(139,92,246,.12);color:var(--violet);border:1px solid rgba(139,92,246,.2)}
+    .pt-g{background:rgba(94,203,161,.15);color:#1a8a62;border:1px solid rgba(94,203,161,.3)}
+    .pt-b{background:rgba(142,181,232,.2);color:#2563a8;border:1px solid rgba(142,181,232,.35)}
+    .pt-p{background:rgba(255,184,154,.2);color:#b85c1a;border:1px solid rgba(255,184,154,.35)}
+    .pt-y{background:rgba(232,208,122,.2);color:#7a5c0a;border:1px solid rgba(232,208,122,.35)}
+    .proj-link{font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.05em;color:var(--violet);text-decoration:none;border-bottom:2px solid var(--lm);padding-bottom:.2rem;transition:all .2s;display:inline-flex;align-items:center;gap:.3rem;align-self:flex-start}
+    .proj-link:hover{color:var(--plum);border-color:var(--plum)}
+
+    @media(max-width:900px){
+      .proj-hero,.proj-list{padding-left:1.5rem;padding-right:1.5rem}
+      .proj-list{grid-template-columns:1fr;padding-top:2.5rem}
+      .ph-inner{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+<div id="cur"></div>
+<nav>
+  <a href="index.html" class="logo">Tutu ✦</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="proj-hero">
+    <div class="ph-inner">
+      <div>
+        <div class="eyebrow anim anim-1">02 — Projects</div>
+        <h1 class="ph-h anim anim-2">What I've<em>Built.</em></h1>
+        <p class="ph-desc anim anim-3">Academic and personal projects spanning data dashboards, REST APIs, order management systems, database design, and research.</p>
+      </div>
+      <a href="https://github.com/aoadenus" target="_blank" rel="noopener" class="gh-link anim anim-4">View all on GitHub ↗</a>
+    </div>
+  </div>
+
+  <div class="proj-list">
+
+    <!-- 1 -->
+    <div class="pcard reveal">
+      <div class="pcard-visual">
+        <span class="pcard-season-badge">Spring 2026</span>
+        <div class="pcard-icon">🏨</div>
+        <div class="pcard-num-bg">01</div>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-season">Spring 2026 · Python · Data Analytics</div>
+        <h2 class="pcard-title">Hotel Operations Analytics Dashboard</h2>
+        <p class="pcard-desc">An interactive Streamlit dashboard built with Python and Plotly that transforms raw booking data into real-time operational KPIs like RevPAR and ADR to support management decision-making.</p>
+        <div class="ptags">
+          <span class="ptag pt-v">Python</span>
+          <span class="ptag pt-v">Streamlit</span>
+          <span class="ptag pt-g">Plotly</span>
+          <span class="ptag pt-g">pandas</span>
+          <span class="ptag pt-b">NumPy</span>
+        </div>
+        <a href="https://github.com/aoadenus/hotel-operations-analytics-dashboard" target="_blank" rel="noopener" class="proj-link">View on GitHub ↗</a>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="pcard reveal">
+      <div class="pcard-visual">
+        <span class="pcard-season-badge">Spring 2026</span>
+        <div class="pcard-icon">🍞</div>
+        <div class="pcard-num-bg">02</div>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-season">Spring 2026 · FastAPI · Backend</div>
+        <h2 class="pcard-title">Smart Bakery REST API</h2>
+        <p class="pcard-desc">A backend FastAPI and SQLite3 system that automates inventory management through a normalized relational database and real-time transaction logic.</p>
+        <div class="ptags">
+          <span class="ptag pt-v">FastAPI</span>
+          <span class="ptag pt-v">Python</span>
+          <span class="ptag pt-g">SQLite</span>
+          <span class="ptag pt-g">Pydantic</span>
+          <span class="ptag pt-b">Render</span>
+        </div>
+        <a href="https://github.com/aoadenus/smart-bakery-api" target="_blank" rel="noopener" class="proj-link">View on GitHub ↗</a>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="pcard reveal">
+      <div class="pcard-visual">
+        <span class="pcard-season-badge">Fall 2025</span>
+        <div class="pcard-icon">🎂</div>
+        <div class="pcard-num-bg">03</div>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-season">Fall 2025 · Lead UI Developer · Team of 9</div>
+        <h2 class="pcard-title">Emily Bakes Cakes — Web Portal</h2>
+        <p class="pcard-desc">A comprehensive business web application featuring a custom ordering system and five role-based staff dashboards to streamline bakery operations from customer checkout to financial reporting.</p>
+        <div class="ptags">
+          <span class="ptag pt-y">HTML5</span>
+          <span class="ptag pt-y">CSS3</span>
+          <span class="ptag pt-p">JavaScript</span>
+          <span class="ptag pt-p">Chart.js</span>
+          <span class="ptag pt-b">Figma</span>
+        </div>
+        <a href="https://github.com/aoadenus/emily-bakes-cakes-web-portal" target="_blank" rel="noopener" class="proj-link">View on GitHub ↗</a>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="pcard reveal">
+      <div class="pcard-visual">
+        <span class="pcard-season-badge">Spring 2026</span>
+        <div class="pcard-icon">🌱</div>
+        <div class="pcard-num-bg">04</div>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-season">Spring 2026 · React · Data Visualization</div>
+        <h2 class="pcard-title">Agribusiness Dashboard</h2>
+        <p class="pcard-desc">A React-based data visualization tool that converts complex USDA and CONAB agricultural research into interactive charts tracking Brazil's soybean production and global market dominance.</p>
+        <div class="ptags">
+          <span class="ptag pt-p">React</span>
+          <span class="ptag pt-p">JavaScript</span>
+          <span class="ptag pt-g">Chart.js</span>
+          <span class="ptag pt-b">USDA Data</span>
+        </div>
+        <a href="https://github.com/aoadenus/agribusiness-dashboard" target="_blank" rel="noopener" class="proj-link">View on GitHub ↗</a>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="pcard reveal">
+      <div class="pcard-visual">
+        <span class="pcard-season-badge">Spring 2026</span>
+        <div class="pcard-icon">🌍</div>
+        <div class="pcard-num-bg">05</div>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-season">Spring 2026 · Research · Data Analysis</div>
+        <h2 class="pcard-title">Brazil Agriculture Digital Transformation</h2>
+        <p class="pcard-desc">A detailed analytical research paper exploring the impact of AI, IoT, and agentic systems on Brazilian agricultural productivity, sustainability, and global supply chain logistics.</p>
+        <div class="ptags">
+          <span class="ptag pt-g">Research</span>
+          <span class="ptag pt-g">AI/IoT</span>
+          <span class="ptag pt-b">Supply Chain</span>
+          <span class="ptag pt-v">Data Analysis</span>
+        </div>
+        <a href="https://github.com/aoadenus/brazil-agriculture-digital-transformation" target="_blank" rel="noopener" class="proj-link">View on GitHub ↗</a>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="pcard reveal">
+      <div class="pcard-visual">
+        <span class="pcard-season-badge">2025</span>
+        <div class="pcard-icon">🐄</div>
+        <div class="pcard-num-bg">06</div>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-season">2025 · Tableau · Data Visualization</div>
+        <h2 class="pcard-title">Livestock Revenue Data Visualization</h2>
+        <p class="pcard-desc">A Tableau-driven data analysis of 2022 USDA Census data that visualizes the economic relationship between farm scale and revenue distribution across different livestock categories.</p>
+        <div class="ptags">
+          <span class="ptag pt-b">Tableau</span>
+          <span class="ptag pt-g">USDA Data</span>
+          <span class="ptag pt-v">Data Viz</span>
+          <span class="ptag pt-y">Census 2022</span>
+        </div>
+        <a href="https://github.com/aoadenus/livestock-revenue-data-visualization" target="_blank" rel="noopener" class="proj-link">View on GitHub ↗</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <span class="footer-left">Tutu Adenusi</span>
+  <ul class="footer-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Adetutu Adenusi · University of Houston · B.S. Computer Information Systems · Class of 2027</div>
+</footer>
+
+<script>
+  const cur=document.getElementById('cur');let mx=0,my=0,cx=0,cy=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+  (function tick(){cx+=(mx-cx)*.15;cy+=(my-cy)*.15;cur.style.left=cx+'px';cur.style.top=cy+'px';requestAnimationFrame(tick)})();
+  document.querySelectorAll('a,button,.hoverable').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'))});
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.08});
+  document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(r=>obs.observe(r));
+</script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About · Tutu Adenusi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* ABOUT PAGE */
+    .about-hero{background:var(--plum);padding:9rem 3.5rem 5rem;position:relative;overflow:hidden}
+    .ab1{width:500px;height:500px;background:rgba(139,92,246,.25);top:-100px;right:-100px;animation:blob 14s ease-in-out infinite alternate}
+    .ab2{width:300px;height:300px;background:rgba(194,245,232,.1);bottom:-60px;left:-60px;animation:blob 18s ease-in-out infinite alternate-reverse}
+    .about-hero-inner{position:relative;z-index:2;max-width:700px}
+    .about-hero h1{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,7vw,7rem);font-weight:900;color:#fff;line-height:.92;margin-bottom:1.5rem}
+    .about-hero h1 em{font-style:italic;color:var(--lm);display:block}
+    .about-hero p{font-size:1.1rem;color:rgba(255,255,255,.55);line-height:1.8;max-width:520px;font-weight:300}
+
+    /* BIO */
+    .bio-section{display:grid;grid-template-columns:1fr 1fr;gap:0}
+    .bio-left{padding:6rem 4rem 6rem 3.5rem;background:var(--white)}
+    .bio-left h2{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:var(--plum);margin-bottom:2rem;line-height:1.1}
+    .bio-left h2 em{font-style:italic;color:var(--violet)}
+    .bio-para{font-size:1rem;color:var(--muted);line-height:1.85;margin-bottom:1.2rem}
+    .bio-para:last-of-type{margin-bottom:2rem}
+    .goal-box{background:var(--ll);border:1.5px solid var(--border);border-radius:16px;padding:1.6rem 2rem;margin-top:2rem}
+    .goal-box .label{font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--violet);margin-bottom:.6rem}
+    .goal-box p{font-size:.92rem;color:var(--plum);line-height:1.7;font-style:italic}
+
+    .bio-right{background:var(--ll);padding:6rem 3.5rem 6rem 4rem;display:flex;flex-direction:column;gap:2rem}
+    .edu-card{background:var(--white);border:1.5px solid var(--border);border-radius:20px;padding:1.8rem 2rem;transition:all .2s}
+    .edu-card:hover{border-color:var(--lm);transform:translateX(4px)}
+    .edu-school{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--plum);margin-bottom:.2rem}
+    .edu-degree{font-size:.9rem;color:var(--violet);font-weight:600;margin-bottom:.4rem;font-family:'Syne',sans-serif}
+    .edu-meta{font-size:.8rem;color:var(--muted)}
+    .edu-tag{display:inline-block;background:var(--violet);color:#fff;font-family:'Syne',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.08em;padding:.25rem .7rem;border-radius:100px;margin-top:.7rem}
+
+    /* STAT MOSAIC */
+    .mosaic-section{padding:5rem 3.5rem;background:var(--cream)}
+    .mosaic-section h2{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--plum);margin-bottom:2.5rem}
+    .mosaic-section h2 em{font-style:italic;color:var(--violet)}
+    .mosaic{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+    .mc{border-radius:24px;padding:2rem;display:flex;flex-direction:column;justify-content:flex-end;min-height:160px}
+    .mc:nth-child(1){background:var(--violet);color:#fff;grid-column:span 2;min-height:200px;justify-content:center}
+    .mc:nth-child(2){background:var(--mint)}
+    .mc:nth-child(3){background:var(--peach)}
+    .mc:nth-child(4){background:var(--sky);grid-column:span 2}
+    .mc:nth-child(5){background:var(--yellow)}
+    .mc-n{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:700;line-height:1;color:inherit}
+    .mc:nth-child(1) .mc-n{font-size:5rem;color:#fff}
+    .mc-l{font-family:'Syne',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.05em;margin-top:.4rem;opacity:.75}
+    .mc:nth-child(1) .mc-l{color:rgba(255,255,255,.7);opacity:1}
+
+    /* INTERESTS + PILLS */
+    .pills-section{padding:4rem 3.5rem;background:var(--white);border-top:1px solid var(--border)}
+    .pills-section h3{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--plum);margin-bottom:1.5rem}
+    .pills{display:flex;flex-wrap:wrap;gap:.6rem}
+    .pill{background:var(--ll);border:1.5px solid var(--lm);color:var(--ps);font-family:'Syne',sans-serif;font-size:.78rem;font-weight:600;padding:.4rem 1rem;border-radius:100px;transition:all .2s}
+    .pill:hover{background:var(--violet);color:#fff;border-color:var(--violet)}
+
+    @media(max-width:900px){.bio-section{grid-template-columns:1fr}.bio-left,.bio-right{padding:4rem 1.5rem}.about-hero{padding:7rem 1.5rem 4rem}.mosaic-section,.pills-section{padding:4rem 1.5rem}.mosaic{grid-template-columns:1fr 1fr}.mc:nth-child(1),.mc:nth-child(4){grid-column:span 1}}
+  </style>
+</head>
+<body>
+<div id="cur"></div>
+<nav>
+  <a href="index.html" class="logo">Tutu ✦</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section class="about-hero">
+    <div class="blob ab1"></div>
+    <div class="blob ab2"></div>
+    <div class="about-hero-inner">
+      <div class="eyebrow eyebrow-light anim anim-1">01 — About Me</div>
+      <h1 class="anim anim-2">Hey, I'm<em>Tutu.</em></h1>
+      <p class="anim anim-3">CIS student, enterprise tech enthusiast, and data nerd on a mission to build systems that actually make a difference.</p>
+    </div>
+  </section>
+
+  <div class="bio-section">
+    <div class="bio-left reveal-l">
+      <div class="eyebrow">My Story</div>
+      <h2>Building at the<br/><em>intersection</em> of<br/>tech &amp; business</h2>
+      <p class="bio-para">I'm a Computer Information Systems student at the University of Houston (3.50 GPA, Dean's List) with an Associate of Arts in Business Administration from Houston City College. I've always been drawn to the space where technology and business logic meet — where a well-designed system can change how an entire organization operates.</p>
+      <p class="bio-para">At Accellux Solutions, I got a front-row seat to how enterprise systems work at scale — supporting SAP S/4HANA FICO implementation for clients like Halliburton and Siemens, contributing to financial data extraction, report validation, and system testing under SAP Activate methodology.</p>
+      <p class="bio-para">My hospitality roles weren't just jobs — they sharpened my instincts around operational systems, process accuracy, and data-driven decision making from the ground floor up.</p>
+      <div class="goal-box">
+        <div class="label">Long-term goal</div>
+        <p>"I want to design and improve systems that help organizations run smarter, make better decisions, and create meaningful impact."</p>
+      </div>
+    </div>
+    <div class="bio-right reveal-r">
+      <div class="eyebrow">Education</div>
+      <div class="edu-card hoverable">
+        <div class="edu-school">University of Houston</div>
+        <div class="edu-degree">B.S. Computer Information Systems</div>
+        <div class="edu-meta">GPA: 3.50 &nbsp;·&nbsp; Expected May 2027 &nbsp;·&nbsp; Houston, TX</div>
+        <div class="edu-meta" style="margin-top:.3rem">Dean's List, Spring 2025</div>
+        <span class="edu-tag">Current</span>
+      </div>
+      <div class="edu-card hoverable">
+        <div class="edu-school">Houston City College</div>
+        <div class="edu-degree">Associate of Arts, Business Administration</div>
+        <div class="edu-meta">GPA: 3.24 &nbsp;·&nbsp; December 2024 &nbsp;·&nbsp; Houston, TX</div>
+        <div class="edu-meta" style="margin-top:.3rem">Dean's List, Fall 2024</div>
+        <span class="edu-tag" style="background:var(--mint);color:var(--plum)">Completed</span>
+      </div>
+      <div style="margin-top:auto">
+        <a href="./Adetutu_Adenusi_Resume.pdf" download class="btn btn-p" style="width:100%;justify-content:center">↓ Download Full Resume</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="mosaic-section reveal">
+    <div class="eyebrow">By the Numbers</div>
+    <h2>A snapshot of<br/><em>where I stand</em></h2>
+    <div class="mosaic">
+      <div class="mc">
+        <div class="mc-n">3.50</div>
+        <div class="mc-l">GPA at University of Houston · Dean's List Spring 2025</div>
+      </div>
+      <div class="mc">
+        <div class="mc-n">6+</div>
+        <div class="mc-l">Portfolio Projects</div>
+      </div>
+      <div class="mc">
+        <div class="mc-n">1yr+</div>
+        <div class="mc-l">SAP Internship</div>
+      </div>
+      <div class="mc">
+        <div class="mc-n">500+</div>
+        <div class="mc-l">LinkedIn Connections</div>
+      </div>
+      <div class="mc">
+        <div class="mc-n">4</div>
+        <div class="mc-l">Organizations & Clubs</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pills-section reveal">
+    <div class="eyebrow">Focus Areas</div>
+    <h3>What I'm interested in</h3>
+    <div class="pills">
+      <span class="pill">Enterprise Systems</span>
+      <span class="pill">Data Analytics</span>
+      <span class="pill">Business Analysis</span>
+      <span class="pill">Systems Design</span>
+      <span class="pill">SAP S/4HANA</span>
+      <span class="pill">REST API Development</span>
+      <span class="pill">Database Design</span>
+      <span class="pill">Financial Data</span>
+      <span class="pill">Process Improvement</span>
+      <span class="pill">Network Analysis</span>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span class="footer-left">Tutu Adenusi</span>
+  <ul class="footer-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Adetutu Adenusi · University of Houston · B.S. Computer Information Systems · Class of 2027</div>
+</footer>
+<script>
+  const cur=document.getElementById('cur');let mx=0,my=0,cx=0,cy=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+  (function tick(){cx+=(mx-cx)*.15;cy+=(my-cy)*.15;cur.style.left=cx+'px';cur.style.top=cy+'px';requestAnimationFrame(tick)})();
+  document.querySelectorAll('a,button,.hoverable,.mc,.pill,.edu-card').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'))});
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.08});
+  document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(r=>obs.observe(r));
+</script>
+</body>
+</html>

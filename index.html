@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adetutu (Tutu) Adenusi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* HOME ONLY */
+    #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0 3.5rem 7rem;position:relative;overflow:hidden}
+    .hb1{width:650px;height:650px;background:rgba(196,160,255,.16);top:-150px;right:-150px;animation:blob 14s ease-in-out infinite alternate}
+    .hb2{width:420px;height:420px;background:rgba(194,245,232,.18);bottom:-100px;left:-100px;animation:blob 18s ease-in-out infinite alternate-reverse}
+    .hb3{width:280px;height:280px;background:rgba(255,184,212,.14);top:40%;right:25%;animation:blob 11s ease-in-out infinite alternate}
+    .bg-name{position:absolute;font-family:'Playfair Display',serif;font-size:clamp(10rem,20vw,22rem);font-weight:900;color:rgba(139,92,246,.04);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;user-select:none;line-height:1}
+    .hero-content{position:relative;z-index:2;max-width:900px}
+    .hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:var(--violet);color:#fff;font-family:'Syne',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.45rem 1.1rem;border-radius:100px;margin-bottom:2rem}
+    h1{font-family:'Playfair Display',serif;font-size:clamp(4.5rem,10vw,9rem);font-weight:900;line-height:.9;color:var(--plum)}
+    h1 em{font-style:italic;color:var(--violet);display:block}
+    .hero-sub{font-size:1.15rem;color:var(--muted);font-weight:300;line-height:1.75;max-width:520px;margin:2rem 0 2.8rem}
+    .hero-btns{display:flex;gap:.9rem;flex-wrap:wrap}
+    .hero-bottom{position:absolute;bottom:0;left:0;right:0;border-top:1px solid var(--border);background:rgba(251,248,255,.7);backdrop-filter:blur(10px);display:flex;padding:1.5rem 3.5rem;gap:4rem;z-index:2}
+    .hstat-n{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--violet);line-height:1}
+    .hstat-l{font-family:'Syne',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.05em;color:var(--muted);margin-top:.15rem}
+    /* quick-nav cards */
+    .quick-nav{padding:5rem 3.5rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+    .qcard{border:1.5px solid var(--border);border-radius:24px;padding:2rem;text-decoration:none;display:flex;flex-direction:column;justify-content:space-between;min-height:180px;transition:all .25s;position:relative;overflow:hidden}
+    .qcard:hover{transform:translateY(-5px);border-color:var(--lm);box-shadow:0 20px 50px rgba(139,92,246,.1)}
+    .qcard-num{font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;color:var(--muted);margin-bottom:1rem}
+    .qcard-title{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--plum);line-height:1.1}
+    .qcard-arrow{font-size:1.3rem;color:var(--violet);align-self:flex-end}
+    .qcard:nth-child(1){background:var(--ll)}
+    .qcard:nth-child(2){background:var(--mint)}
+    .qcard:nth-child(3){background:var(--peach)}
+    .qcard:nth-child(4){background:var(--sky)}
+    @media(max-width:900px){#hero{padding:8rem 1.5rem 6rem}.hero-bottom{display:none}.quick-nav{grid-template-columns:1fr 1fr;padding:3rem 1.5rem}}
+  </style>
+</head>
+<body>
+<div id="cur"></div>
+<nav>
+  <a href="index.html" class="logo">Tutu ✦</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section id="hero">
+    <div class="blob hb1"></div>
+    <div class="blob hb2"></div>
+    <div class="blob hb3"></div>
+    <div class="bg-name">TUTU</div>
+    <div class="hero-content">
+      <div class="hero-tag anim anim-1">✦ Open to Summer 2026 Internship</div>
+      <h1 class="anim anim-2">Adetutu<em>Adenusi.</em></h1>
+      <p class="hero-sub anim anim-3">Computer Information Systems student at the University of Houston, focused on enterprise systems, data analytics, and business technology. Currently building projects and looking for ways to apply what I'm learning.</p>
+      <div class="hero-btns anim anim-4">
+        <a href="about.html" class="btn btn-p">Explore My Work</a>
+        <a href="./Adetutu_Adenusi_Resume.pdf" download class="btn btn-o">↓ Download Resume</a>
+        <a href="contact.html" class="btn btn-s">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-bottom">
+      <div><div class="hstat-n">3.50</div><div class="hstat-l">GPA · Dean's List · UH</div></div>
+      <div><div class="hstat-n">6+</div><div class="hstat-l">Projects Built</div></div>
+      <div><div class="hstat-n">1yr+</div><div class="hstat-l">SAP Experience</div></div>
+      <div><div class="hstat-n">2027</div><div class="hstat-l">Expected Graduation</div></div>
+      <div style="margin-left:auto;display:flex;align-items:center;gap:.5rem;font-family:'Syne',sans-serif;font-size:.75rem;color:var(--muted)">Houston, TX &nbsp;·&nbsp; <a href="https://github.com/aoadenus" target="_blank" style="color:var(--violet);text-decoration:none">GitHub ↗</a> &nbsp;·&nbsp; <a href="https://linkedin.com/in/adetutuadenusi" target="_blank" style="color:var(--violet);text-decoration:none">LinkedIn ↗</a></div>
+    </div>
+  </section>
+
+  <section class="quick-nav">
+    <a href="about.html" class="qcard reveal hoverable">
+      <div class="qcard-num">01 — ABOUT</div>
+      <div>
+        <div class="qcard-title">Who I Am</div>
+        <div class="qcard-arrow">→</div>
+      </div>
+    </a>
+    <a href="projects.html" class="qcard reveal hoverable">
+      <div class="qcard-num">02 — PROJECTS</div>
+      <div>
+        <div class="qcard-title">What I've Built</div>
+        <div class="qcard-arrow">→</div>
+      </div>
+    </a>
+    <a href="experience.html" class="qcard reveal hoverable">
+      <div class="qcard-num">03 — EXPERIENCE</div>
+      <div>
+        <div class="qcard-title">Where I've Been</div>
+        <div class="qcard-arrow">→</div>
+      </div>
+    </a>
+    <a href="skills.html" class="qcard reveal hoverable">
+      <div class="qcard-num">04 — SKILLS</div>
+      <div>
+        <div class="qcard-title">What I Know</div>
+        <div class="qcard-arrow">→</div>
+      </div>
+    </a>
+  </section>
+</main>
+
+<footer>
+  <span class="footer-left">Tutu Adenusi</span>
+  <ul class="footer-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Adetutu Adenusi · University of Houston · B.S. Computer Information Systems · Class of 2027</div>
+</footer>
+
+<script>
+  const cur=document.getElementById('cur');let mx=0,my=0,cx=0,cy=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+  (function tick(){cx+=(mx-cx)*.15;cy+=(my-cy)*.15;cur.style.left=cx+'px';cur.style.top=cy+'px';requestAnimationFrame(tick)})();
+  document.querySelectorAll('a,button,.hoverable').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'))});
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.1});
+  document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(r=>obs.observe(r));
+</script>
+</body>
+</html>
