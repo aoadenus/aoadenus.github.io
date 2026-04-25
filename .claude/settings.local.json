@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"\\\\.\\(html|css|js|json\\)$\")",
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Read(//c/Users/adere/Downloads/**)",
+      "Bash(done)",
+      "Bash(grep -iE \"\\\\.\\(pdf\\)$\")",
+      "Bash(ls -la c:UsersadereDownloads/*[Rr]esume*.pdf c:UsersadereDownloads/ADETUTU ADENUSI 2025 RESUME*.pdf)",
+      "Bash(sort -k6,7)"
+    ]
+  }
+}
