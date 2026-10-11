@@ -1,132 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Adetutu (Tutu) Adenusi</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
-  <style>
-    /* HOME ONLY */
-    #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0 3.5rem 7rem;position:relative;overflow:hidden}
-    .hb1{width:650px;height:650px;background:rgba(196,160,255,.16);top:-150px;right:-150px;animation:blob 14s ease-in-out infinite alternate}
-    .hb2{width:420px;height:420px;background:rgba(194,245,232,.18);bottom:-100px;left:-100px;animation:blob 18s ease-in-out infinite alternate-reverse}
-    .hb3{width:280px;height:280px;background:rgba(255,184,212,.14);top:40%;right:25%;animation:blob 11s ease-in-out infinite alternate}
-    .bg-name{position:absolute;font-family:'Playfair Display',serif;font-size:clamp(10rem,20vw,22rem);font-weight:900;color:rgba(139,92,246,.04);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;user-select:none;line-height:1}
-    .hero-content{position:relative;z-index:2;max-width:900px}
-    .hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:var(--violet);color:#fff;font-family:'Syne',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.45rem 1.1rem;border-radius:100px;margin-bottom:2rem}
-    h1{font-family:'Playfair Display',serif;font-size:clamp(4.5rem,10vw,9rem);font-weight:900;line-height:.9;color:var(--plum)}
-    h1 em{font-style:italic;color:var(--violet);display:block}
-    .hero-sub{font-size:1.15rem;color:var(--muted);font-weight:300;line-height:1.75;max-width:520px;margin:2rem 0 2.8rem}
-    .hero-btns{display:flex;gap:.9rem;flex-wrap:wrap}
-    .hero-bottom{position:absolute;bottom:0;left:0;right:0;border-top:1px solid var(--border);background:rgba(251,248,255,.7);backdrop-filter:blur(10px);display:flex;padding:1.5rem 3.5rem;gap:4rem;z-index:2}
-    .hstat-n{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--violet);line-height:1}
-    .hstat-l{font-family:'Syne',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.05em;color:var(--muted);margin-top:.15rem}
-    /* quick-nav cards */
-    .quick-nav{padding:5rem 3.5rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-    .qcard{border:1.5px solid var(--border);border-radius:24px;padding:2rem;text-decoration:none;display:flex;flex-direction:column;justify-content:space-between;min-height:180px;transition:all .25s;position:relative;overflow:hidden}
-    .qcard:hover{transform:translateY(-5px);border-color:var(--lm);box-shadow:0 20px 50px rgba(139,92,246,.1)}
-    .qcard-num{font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;color:var(--muted);margin-bottom:1rem}
-    .qcard-title{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--plum);line-height:1.1}
-    .qcard-arrow{font-size:1.3rem;color:var(--violet);align-self:flex-end}
-    .qcard:nth-child(1){background:var(--ll)}
-    .qcard:nth-child(2){background:var(--mint)}
-    .qcard:nth-child(3){background:var(--peach)}
-    .qcard:nth-child(4){background:var(--sky)}
-    @media(max-width:900px){#hero{padding:8rem 1.5rem 6rem}.hero-bottom{display:none}.quick-nav{grid-template-columns:1fr 1fr;padding:3rem 1.5rem}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Business Systems &amp; Enterprise Technology Portfolio | Adetutu (Tutu) Adenusi</title>
+<meta name="description" content="Adetutu (Tutu) Adenusi: University of Houston CIS senior graduating in May 2027, focused on business systems analysis, SAP enterprise processes, SQL, Python and data analytics.">
+<meta name="theme-color" content="#c8102e">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Adetutu Adenusi Portfolio">
+<meta property="og:title" content="Business Systems &amp; Enterprise Technology Portfolio | Adetutu Adenusi">
+<meta property="og:description" content="Adetutu (Tutu) Adenusi: University of Houston CIS senior graduating in May 2027, focused on business systems analysis, SAP enterprise processes, SQL, Python and data analytics.">
+<meta property="og:url" content="https://aoadenus.github.io/">
+<link rel="canonical" href="https://aoadenus.github.io/">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="style.css">
+<script src="assets/js/site.js" defer>
+</script>
 </head>
 <body>
-<div id="cur"></div>
-<nav>
-  <a href="index.html" class="logo">Tutu ✦</a>
-  <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="experience.html">Experience</a></li>
-    <li><a href="skills.html">Skills</a></li>
-    <li><a href="contact.html" class="nav-cta">Contact</a></li>
-  </ul>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container header-inner">
+<a class="brand" href="index.html" aria-label="Tutu Adenusi, homepage">
+<span class="brand-mark" aria-hidden="true">AA</span>
+<span class="brand-name">
+<strong>TUTU ADENUSI</strong>
+<small>SYSTEMS · DATA · ENTERPRISE</small>
+</span>
+</a>
+<nav class="desktop-nav" aria-label="Main navigation">
+<a href="index.html" aria-current="page">Home</a>
+<a href="about.html">About</a>
+<a href="projects.html">Projects</a>
+<a href="experience.html">Experience</a>
+<a href="skills.html">Skills</a>
+<a href="contact.html" class="nav-contact">Contact</a>
 </nav>
-
-<main>
-  <section id="hero">
-    <div class="blob hb1"></div>
-    <div class="blob hb2"></div>
-    <div class="blob hb3"></div>
-    <div class="bg-name">TUTU</div>
-    <div class="hero-content">
-      <div class="hero-tag anim anim-1">✦ Open to Summer 2026 Internship</div>
-      <h1 class="anim anim-2">Adetutu<em>Adenusi.</em></h1>
-      <p class="hero-sub anim anim-3">Computer Information Systems student at the University of Houston, focused on enterprise systems, data analytics, and business technology. Currently building projects and looking for ways to apply what I'm learning.</p>
-      <div class="hero-btns anim anim-4">
-        <a href="about.html" class="btn btn-p">Explore My Work</a>
-        <a href="./Adetutu_Adenusi_Resume.pdf" download class="btn btn-o">↓ Download Resume</a>
-        <a href="contact.html" class="btn btn-s">Get In Touch</a>
-      </div>
-    </div>
-    <div class="hero-bottom">
-      <div><div class="hstat-n">Dean's List</div><div class="hstat-l">University of Houston · Spring 2025</div></div>
-      <div><div class="hstat-n">6+</div><div class="hstat-l">Projects Built</div></div>
-      <div><div class="hstat-n">1yr+</div><div class="hstat-l">SAP Experience</div></div>
-      <div><div class="hstat-n">2027</div><div class="hstat-l">Expected Graduation</div></div>
-      <div style="margin-left:auto;display:flex;align-items:center;gap:.5rem;font-family:'Syne',sans-serif;font-size:.75rem;color:var(--muted)">Houston, TX &nbsp;·&nbsp; <a href="https://github.com/aoadenus" target="_blank" style="color:var(--violet);text-decoration:none">GitHub ↗</a> &nbsp;·&nbsp; <a href="https://linkedin.com/in/adetutuadenusi" target="_blank" style="color:var(--violet);text-decoration:none">LinkedIn ↗</a></div>
-    </div>
-  </section>
-
-  <section class="quick-nav">
-    <a href="about.html" class="qcard reveal hoverable">
-      <div class="qcard-num">01 — ABOUT</div>
-      <div>
-        <div class="qcard-title">Who I Am</div>
-        <div class="qcard-arrow">→</div>
-      </div>
-    </a>
-    <a href="projects.html" class="qcard reveal hoverable">
-      <div class="qcard-num">02 — PROJECTS</div>
-      <div>
-        <div class="qcard-title">What I've Built</div>
-        <div class="qcard-arrow">→</div>
-      </div>
-    </a>
-    <a href="experience.html" class="qcard reveal hoverable">
-      <div class="qcard-num">03 — EXPERIENCE</div>
-      <div>
-        <div class="qcard-title">Where I've Been</div>
-        <div class="qcard-arrow">→</div>
-      </div>
-    </a>
-    <a href="skills.html" class="qcard reveal hoverable">
-      <div class="qcard-num">04 — SKILLS</div>
-      <div>
-        <div class="qcard-title">What I Know</div>
-        <div class="qcard-arrow">→</div>
-      </div>
-    </a>
-  </section>
+<nav class="mobile-nav" aria-label="Mobile navigation">
+<details>
+<summary>Menu</summary>
+<ul>
+<li>
+<a href="index.html" aria-current="page">Home</a>
+</li>
+<li>
+<a href="about.html">About</a>
+</li>
+<li>
+<a href="projects.html">Projects</a>
+</li>
+<li>
+<a href="experience.html">Experience</a>
+</li>
+<li>
+<a href="skills.html">Skills</a>
+</li>
+<li>
+<a href="contact.html">Contact</a>
+</li>
+</ul>
+</details>
+</nav>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<section class="hero">
+<div class="container hero-inner">
+<div class="hero-copy">
+<span class="hero-kicker">Open to 2027 full-time &amp; graduate opportunities</span>
+<h1>Adetutu <span class="italic">Adenusi.</span>
+</h1>
+<div class="role">Business Systems Analysis · Enterprise Applications · Data &amp; Operations</div>
+<p class="lead">I'm Tutu, a University of Houston Computer Information Systems senior. I turn business requirements into clearer workflows, practical applications and decision-ready data—bringing together systems thinking, SQL, Python and a foundation in SAP and IT service management.</p>
+<div class="ctas">
+<a class="btn btn-primary" href="projects.html">Explore my projects ↗</a>
+<a class="btn btn-outline" href="Adetutu_Adenusi_Resume.pdf" download>Download résumé ↓</a>
+<a class="btn btn-soft" href="contact.html">Let's connect</a>
+</div>
+</div>
+<aside class="hero-profile" aria-label="University of Houston education">
+  <img class="uh-mark" src="assets/brand/uh-interlocking.png" alt="University of Houston" width="86" height="75">
+  <p class="profile-label">University of Houston</p>
+  <h2>Business-minded.<br>Technology-driven.</h2>
+  <p class="degree">B.S. Computer Information Systems<br>Houston, Texas</p>
+  <div class="profile-year">
+<strong>2027</strong>
+<span>Expected graduation<br>May 2027</span>
+</div>
+  <p class="profile-note">Where business understanding<br>meets technical delivery.</p>
+</aside>
+</div>
+</section>
+<div class="strip">
+<div class="container strip-inner">
+<div class="stat">
+<strong>May 2027</strong>
+<span>Expected UH graduation</span>
+</div>
+<div class="stat">
+<strong>SAP certified</strong>
+<span>End-to-end business processes</span>
+</div>
+<div class="stat">
+<strong>ITIL 4</strong>
+<span>Foundation · PeopleCert</span>
+</div>
+<div class="stat">
+<strong>Houston, TX</strong>
+<span>Open to relocation</span>
+</div>
+</div>
+</div>
+<section class="section">
+<div class="container">
+<div class="section-head">
+<div>
+<span class="eyebrow">Selected work</span>
+<h2>Business needs.<br>
+<span class="italic">Working solutions.</span>
+</h2>
+</div>
+<p>Projects selected for the same reason I enjoy systems work: each connects a real operational problem to requirements, data, an interface or a usable workflow.</p>
+</div>
+<div class="cards">
+<article class="card">
+<div class="card-top">
+<span class="kind">Business systems · Design</span>
+<span class="icon" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+<path d="M5 11h14v9H5zM3 20h18M8 11V7h8v4M12 7V3M5 15c2-3 4 3 7 0s5 3 7 0"/>
+</svg>
+</span>
+</div>
+    <div class="card-body">
+<p class="small" style="margin-bottom:.45rem">Aug–Nov 2025 · Lead UI & Prototype Developer · Team of 9</p>
+<h3>Emily Bakes Cakes</h3>
+<p>Translated a bakery's manual order and customer-tracking needs into a web-based ordering experience and five role-specific staff dashboards.</p>
+<div class="tags">
+<span class="tag">Requirements analysis</span>
+<span class="tag">HTML / CSS</span>
+<span class="tag">JavaScript</span>
+<span class="tag">Figma</span>
+<span class="tag">Dashboards</span>
+</div>
+<div class="impact">Demonstrates requirements translation, workflow redesign, team delivery and interface prototyping.</div>
+<div class="links">
+<a class="text-link" href="https://github.com/aoadenus/emily-bakes-cakes-web-portal" target="_blank" rel="noopener noreferrer">GitHub repository ↗</a>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-top">
+<span class="kind">Business systems · Data modeling</span>
+<span class="icon" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+<ellipse cx="12" cy="5" rx="8" ry="3"/>
+<path d="M4 5v7c0 4 16 4 16 0V5M4 12v7c0 4 16 4 16 0v-7"/>
+</svg>
+</span>
+</div>
+    <div class="card-body">
+<p class="small" style="margin-bottom:.45rem">Jan–May 2026 · Requirements & business rules · Team database project</p>
+<h3>Mama's Little Bakery Management System</h3>
+<p>Translated operational requirements into relationship rules for a full bakery business spanning sales, inventory, suppliers, employee operations and compliance.</p>
+<div class="tags">
+<span class="tag">Business rules</span>
+<span class="tag">MySQL</span>
+<span class="tag">ERD</span>
+<span class="tag">3NF</span>
+<span class="tag">AWS RDS</span>
+</div>
+<div class="impact">48 bidirectional rules · 41 entities · 15 SQL analysis queries · AWS RDS team implementation.</div>
+<div class="links">
+<span class="small">Supporting documents available on request</span>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-top">
+<span class="kind">Data analytics · Operations</span>
+<span class="icon" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+<path d="M4 21V7h16v14M2 21h20M8 7V3h8v4M9 21v-5h6v5M8 10h1m6 0h1M8 13h1m6 0h1"/>
+</svg>
+</span>
+</div>
+    <div class="card-body">
+<p class="small" style="margin-bottom:.45rem">Jan–Feb 2026 · Independent analytics project</p>
+<h3>Hotel Operations Analytics Dashboard</h3>
+<p>Designed a Python/Streamlit reporting workflow to clean booking data and visualize occupancy, ADR, RevPAR, cancellations, no-shows and guest satisfaction.</p>
+<div class="tags">
+<span class="tag">Python</span>
+<span class="tag">Streamlit</span>
+<span class="tag">pandas</span>
+<span class="tag">Plotly</span>
+<span class="tag">KPIs</span>
+</div>
+<div class="impact">From raw booking data to filtered Plotly dashboards, CSV exports and management notes.</div>
+<div class="links">
+<a class="text-link" href="https://github.com/aoadenus/hotel-operations-analytics-dashboard" target="_blank" rel="noopener noreferrer">GitHub repository ↗</a>
+</div>
+</div>
+</article>
+</div>
+<div class="ctas">
+<a class="btn btn-outline" href="projects.html">See all 9 projects →</a>
+</div>
+</div>
+</section>
+<section class="section section-alt">
+<div class="container grid-2">
+<div>
+<span class="eyebrow">What I bring</span>
+<h2>Business understanding meets <span class="italic">technical delivery.</span>
+</h2>
+<p class="lead">I studied business before moving deeper into information systems. My internship provided supervised exposure to SAP S/4HANA Finance, while my projects strengthened requirements analysis, database modeling, API development and reporting.</p>
+<a href="about.html" class="text-link">Read my story →</a>
+</div>
+<div class="panel soft">
+<h3>Currently pursuing</h3>
+<ul class="bullets">
+<li>Associate / entry-level Business Systems Analyst</li>
+<li>ERP or enterprise applications analyst</li>
+<li>Operations or business data analyst</li>
+<li>Technology consulting and rotational programs</li>
+</ul>
+<p class="small" style="margin-top:1.1rem">Seeking 2027 start dates · On-site, hybrid or remote opportunities considered</p>
+</div>
+</div>
+</section>
+<section class="cta-band">
+<div class="container">
+<span class="eyebrow" style="color:var(--mint)">Next step</span>
+<h2>Let's build something useful.</h2>
+<p>I'm interested in opportunities where business processes, enterprise systems and data come together.</p>
+<div class="ctas">
+<a class="btn btn-primary" href="contact.html">Get in touch ↗</a>
+<a class="btn btn-outline" href="https://www.linkedin.com/in/adetutuadenusi" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a>
+</div>
+</div>
+</section>
 </main>
-
-<footer>
-  <span class="footer-left">Tutu Adenusi</span>
-  <ul class="footer-links">
-    <li><a href="about.html">About</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="experience.html">Experience</a></li>
-    <li><a href="skills.html">Skills</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <div class="footer-copy">© 2026 Adetutu Adenusi · University of Houston · B.S. Computer Information Systems · Class of 2027</div>
+<footer class="footer">
+<div class="container">
+<div class="footer-inner">
+<div>
+<strong>Adetutu (Tutu) Adenusi</strong>
+<p style="margin:.25rem 0 0">Business systems • Enterprise technology • Data</p>
+</div>
+<div class="footer-links">
+<a href="projects.html">Projects</a>
+<a href="experience.html">Experience</a>
+<a href="skills.html">Skills</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+<small>© 2026 Adetutu Adenusi · University of Houston · Expected May 2027</small>
+<span class="affiliation-note">Personal portfolio · University of Houston student. Not an official university website.</span>
+</div>
 </footer>
-
-<script>
-  const cur=document.getElementById('cur');let mx=0,my=0,cx=0,cy=0;
-  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
-  (function tick(){cx+=(mx-cx)*.15;cy+=(my-cy)*.15;cur.style.left=cx+'px';cur.style.top=cy+'px';requestAnimationFrame(tick)})();
-  document.querySelectorAll('a,button,.hoverable').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'))});
-  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.1});
-  document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(r=>obs.observe(r));
-</script>
 </body>
 </html>

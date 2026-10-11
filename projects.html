@@ -1,262 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projects · Tutu Adenusi</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
-  <style>
-    .proj-hero{background:var(--cream);padding:9rem 3.5rem 4rem;border-bottom:1px solid var(--border)}
-    .ph-inner{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:2rem}
-    .ph-h{font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,6rem);font-weight:900;color:var(--plum);line-height:.92;margin-bottom:1rem}
-    .ph-h em{font-style:italic;color:var(--violet);display:block}
-    .ph-desc{font-size:.95rem;color:var(--muted);line-height:1.8;max-width:360px;font-weight:300}
-    .gh-link{font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;color:var(--violet);text-decoration:none;border:2px solid var(--lm);padding:.65rem 1.4rem;border-radius:100px;transition:all .2s;white-space:nowrap}
-    .gh-link:hover{background:var(--violet);color:#fff;border-color:var(--violet)}
-
-    /* PROJECT GRID */
-    .proj-list{padding:4rem 3.5rem 6rem;display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
-
-    .pcard{border:1.5px solid var(--border);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
-    .pcard:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(139,92,246,.1)}
-
-    .pcard-visual{min-height:180px;display:flex;align-items:center;justify-content:center;position:relative;padding:2rem}
-    .pcard:nth-child(1) .pcard-visual{background:linear-gradient(135deg,var(--rose) 0%,var(--lilac) 100%)}
-    .pcard:nth-child(2) .pcard-visual{background:linear-gradient(135deg,var(--mint) 0%,var(--sky) 100%)}
-    .pcard:nth-child(3) .pcard-visual{background:linear-gradient(135deg,var(--lilac) 0%,var(--lm) 100%)}
-    .pcard:nth-child(4) .pcard-visual{background:linear-gradient(135deg,var(--peach) 0%,var(--rose) 100%)}
-    .pcard:nth-child(5) .pcard-visual{background:linear-gradient(135deg,var(--sky) 0%,var(--mint) 100%)}
-    .pcard:nth-child(6) .pcard-visual{background:linear-gradient(135deg,var(--yellow) 0%,var(--peach) 100%)}
-    .pcard:nth-child(7) .pcard-visual{background:linear-gradient(135deg,var(--lm) 0%,var(--lilac) 100%)}
-
-    .pcard-icon{font-size:3rem;position:relative;z-index:2}
-    .pcard-season-badge{font-family:'Syne',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,255,255,.5);color:var(--plum);padding:.3rem .9rem;border-radius:100px;position:absolute;top:1.2rem;left:1.2rem}
-    .pcard-num-bg{font-family:'Playfair Display',serif;font-size:5rem;font-weight:900;color:rgba(255,255,255,.2);line-height:1;position:absolute;bottom:.5rem;right:1rem}
-
-    .pcard-body{padding:1.8rem 2rem 2rem;display:flex;flex-direction:column;flex:1}
-    .pcard-season{font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
-    .pcard-title{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:700;color:var(--plum);line-height:1.2;margin-bottom:.9rem}
-    .pcard-desc{font-size:.88rem;color:var(--muted);line-height:1.75;margin-bottom:1.2rem;flex:1}
-    .ptags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.4rem}
-    .ptag{font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;padding:.3rem .8rem;border-radius:8px;letter-spacing:.02em}
-    .pt-v{background:rgba(139,92,246,.12);color:var(--violet);border:1px solid rgba(139,92,246,.2)}
-    .pt-g{background:rgba(94,203,161,.15);color:#1a8a62;border:1px solid rgba(94,203,161,.3)}
-    .pt-b{background:rgba(142,181,232,.2);color:#2563a8;border:1px solid rgba(142,181,232,.35)}
-    .pt-p{background:rgba(255,184,154,.2);color:#b85c1a;border:1px solid rgba(255,184,154,.35)}
-    .pt-y{background:rgba(232,208,122,.2);color:#7a5c0a;border:1px solid rgba(232,208,122,.35)}
-    .proj-link{font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.05em;color:var(--violet);text-decoration:none;border-bottom:2px solid var(--lm);padding-bottom:.2rem;transition:all .2s;display:inline-flex;align-items:center;gap:.3rem;align-self:flex-start}
-    .proj-link:hover{color:var(--plum);border-color:var(--plum)}
-
-    @media(max-width:900px){
-      .proj-hero,.proj-list{padding-left:1.5rem;padding-right:1.5rem}
-      .proj-list{grid-template-columns:1fr;padding-top:2.5rem}
-      .ph-inner{flex-direction:column;align-items:flex-start}
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Projects | Adetutu (Tutu) Adenusi</title>
+<meta name="description" content="Business systems, database modeling, Python analytics, REST APIs and AI hackathon work by Adetutu Adenusi.">
+<meta name="theme-color" content="#c8102e">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Adetutu Adenusi Portfolio">
+<meta property="og:title" content="Projects | Adetutu Adenusi">
+<meta property="og:description" content="Business systems, database modeling, Python analytics, REST APIs and AI hackathon work by Adetutu Adenusi.">
+<meta property="og:url" content="https://aoadenus.github.io/projects.html">
+<link rel="canonical" href="https://aoadenus.github.io/projects.html">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="style.css">
+<script src="assets/js/site.js" defer>
+</script>
+<script src="assets/js/github-activity.js" defer>
+</script>
 </head>
 <body>
-<div id="cur"></div>
-<nav>
-  <a href="index.html" class="logo">Tutu ✦</a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="projects.html" class="active">Projects</a></li>
-    <li><a href="experience.html">Experience</a></li>
-    <li><a href="skills.html">Skills</a></li>
-    <li><a href="contact.html" class="nav-cta">Contact</a></li>
-  </ul>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container header-inner">
+<a class="brand" href="index.html" aria-label="Tutu Adenusi, homepage">
+<span class="brand-mark" aria-hidden="true">AA</span>
+<span class="brand-name">
+<strong>TUTU ADENUSI</strong>
+<small>SYSTEMS · DATA · ENTERPRISE</small>
+</span>
+</a>
+<nav class="desktop-nav" aria-label="Main navigation">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="projects.html" aria-current="page">Projects</a>
+<a href="experience.html">Experience</a>
+<a href="skills.html">Skills</a>
+<a href="contact.html" class="nav-contact">Contact</a>
 </nav>
-
-<main>
-  <div class="proj-hero">
-    <div class="ph-inner">
-      <div>
-        <div class="eyebrow anim anim-1">02 — Projects</div>
-        <h1 class="ph-h anim anim-2">What I've<em>Built.</em></h1>
-        <p class="ph-desc anim anim-3">Academic, hackathon, and personal projects spanning AI healthcare tools, data dashboards, REST APIs, business web applications, database design, and research.</p>
-      </div>
-      <a href="https://github.com/aoadenus" target="_blank" rel="noopener" class="gh-link anim anim-4">View all on GitHub ↗</a>
+<nav class="mobile-nav" aria-label="Mobile navigation">
+<details>
+<summary>Menu</summary>
+<ul>
+<li>
+<a href="index.html">Home</a>
+</li>
+<li>
+<a href="about.html">About</a>
+</li>
+<li>
+<a href="projects.html" aria-current="page">Projects</a>
+</li>
+<li>
+<a href="experience.html">Experience</a>
+</li>
+<li>
+<a href="skills.html">Skills</a>
+</li>
+<li>
+<a href="contact.html">Contact</a>
+</li>
+</ul>
+</details>
+</nav>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<section class="page-intro">
+<div class="container">
+<span class="eyebrow">02 — Projects</span>
+<h1>What I’ve <span class="italic">built.</span>
+</h1>
+<p class="lead">Nine academic, hackathon and personal projects organized around business workflows, systems analysis, data and software. Individual contributions and team context are identified on each card.</p>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<h2 class="sr-only">Project portfolio</h2>
+<div class="cards">
+<article class="card">
+<div class="card-top">
+<span class="kind">Business systems · Design</span>
+<span class="icon" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+<path d="M5 11h14v9H5zM3 20h18M8 11V7h8v4M12 7V3M5 15c2-3 4 3 7 0s5 3 7 0"/>
+</svg>
+</span>
+</div>
+    <div class="card-body">
+<p class="small" style="margin-bottom:.45rem">Aug–Nov 2025 · Lead UI & Prototype Developer · Team of 9</p>
+<h3>Emily Bakes Cakes</h3>
+<p>Translated a bakery's manual order and customer-tracking needs into a web-based ordering experience and five role-specific staff dashboards.</p>
+<div class="tags">
+<span class="tag">Requirements analysis</span>
+<span class="tag">HTML / CSS</span>
+<span class="tag">JavaScript</span>
+<span class="tag">Figma</span>
+<span class="tag">Dashboards</span>
+</div>
+<div class="impact">Demonstrates requirements translation, workflow redesign, team delivery and interface prototyping.</div>
+<div class="links">
+<a class="text-link" href="https://github.com/aoadenus/emily-bakes-cakes-web-portal" target="_blank" rel="noopener noreferrer">GitHub repository ↗</a>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-top">
+<span class="kind">Business systems · Data modeling</span>
+<span class="icon" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+<ellipse cx="12" cy="5" rx="8" ry="3"/>
+<path d="M4 5v7c0 4 16 4 16 0V5M4 12v7c0 4 16 4 16 0v-7"/>
+</svg>
+</span>
+</div>
+    <div class="card-body">
+<p class="small" style="margin-bottom:.45rem">Jan–May 2026 · Requirements & business rules · Team database project</p>
+<h3>Mama's Little Bakery Management System</h3>
+<p>Translated operational requirements into relationship rules for a full bakery business spanning sales, inventory, suppliers, employee operations and compliance.</p>
+<div class="tags">
+<span class="tag">Business rules</span>
+<span class="tag">MySQL</span>
+<span class="tag">ERD</span>
+<span class="tag">3NF</span>
+<span class="tag">AWS RDS</span>
+</div>
+<div class="impact">48 bidirectional rules · 41 entities · 15 SQL analysis queries · AWS RDS team implementation.</div>
+<div class="links">
+<span class="small">Supporting documents available on request</span>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-top">
+<span class="kind">Data analytics · Operations</span>
+<span class="icon" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+<path d="M4 21V7h16v14M2 21h20M8 7V3h8v4M9 21v-5h6v5M8 10h1m6 0h1M8 13h1m6 0h1"/>
+</svg>
+</span>
+</div>
+    <div class="card-body">
+<p class="small" style="margin-bottom:.45rem">Jan–Feb 2026 · Independent analytics project</p>
+<h3>Hotel Operations Analytics Dashboard</h3>
+<p>Designed a Python/Streamlit reporting workflow to clean booking data and visualize occupancy, ADR, RevPAR, cancellations, no-shows and guest satisfaction.</p>
+<div class="tags">
+<span class="tag">Python</span>
+<span class="tag">Streamlit</span>
+<span class="tag">pandas</span>
+<span class="tag">Plotly</span>
+<span class="tag">KPIs</span>
+</div>
+<div class="impact">From raw booking data to filtered Plotly dashboards, CSV exports and management notes.</div>
+<div class="links">
+<a class="text-link" href="https://github.com/aoadenus/hotel-operations-analytics-dashboard" target="_blank" rel="noopener noreferrer">GitHub repository ↗</a>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-top">
+<span class="kind">AI · Developer workflows</span>
+<span class="icon" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+<rect x="3" y="3" width="6" height="6" rx="1"/>
+<rect x="15" y="15" width="6" height="6" rx="1"/>
+<path d="M9 6h9v9M6 9v9h9m0-3 3 3-3 3M15 3l3 3-3 3"/>
+</svg>
+</span>
+</div>
+    <div class="card-body">
+<p class="small" style="margin-bottom:.45rem">May 2026 · UX Coordinator & Frontend Engineer · IBM Bob Dev Day Hackathon</p>
+<h3>ProcessDoctor</h3>
+<p>Team-built AI-assisted concept for diagnosing and improving CI/CD workflows using IBM Bob, Granite and watsonx Orchestrate. Led frontend work and aligned the UI with IBM Carbon conventions.</p>
+<div class="tags">
+<span class="tag">UX</span>
+<span class="tag">Frontend</span>
+<span class="tag">IBM Carbon</span>
+<span class="tag">CI/CD</span>
+<span class="tag">AI workflows</span>
+</div>
+<div class="impact">Produced and narrated the 3-minute demo; prepared the problem/solution and tool-usage storytelling.</div>
+<div class="links">
+<a class="text-link" href="https://lnkd.in/gyaiqXrp" target="_blank" rel="noopener noreferrer">Demo video ↗</a>
+<a class="text-link" href="https://lnkd.in/gvcKVkia" target="_blank" rel="noopener noreferrer">Team repository ↗</a>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-top">
+<span class="kind">Healthcare · AI prototype</span>
+<span class="icon" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+<path d="M8 3H4v7a5 5 0 0 0 10 0V3h-4M9 15v2a4 4 0 0 0 8 0v-2"/>
+<circle cx="18" cy="12" r="3"/>
+</svg>
+</span>
+</div>
+    <div class="card-body">
+<p class="small" style="margin-bottom:.45rem">Apr 2026 · Lead Developer & UX Coordinator · Team of 3</p>
+<h3>HealthAuthAI</h3>
+<p>Helped design a simulated specialty-pharmacy prior authorization workflow featuring AI-drafted letters, denial-risk scoring, appeal drafts, clinician review and audit trail.</p>
+<div class="tags">
+<span class="tag">Base44</span>
+<span class="tag">Workflow design</span>
+<span class="tag">Prompt engineering</span>
+<span class="tag">Human review</span>
+</div>
+<div class="impact">Human review remained required; all case data was simulated.</div>
+<div class="links">
+<a class="text-link" href="https://original-smart-auth-flow.base44.app/case-input" target="_blank" rel="noopener noreferrer">Prototype demo ↗</a>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-top">
+<span class="kind">Backend · Enterprise data</span>
+<span class="icon" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+<path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-12-2 18"/>
+</svg>
+</span>
+</div>
+    <div class="card-body">
+<p class="small" style="margin-bottom:.45rem">Feb–Mar 2026 · Independent backend project</p>
+<h3>Smart Bakery REST API</h3>
+<p>Built a FastAPI and SQLite backend connecting bakery orders to stock validation, inventory deductions, order totals and transaction records.</p>
+<div class="tags">
+<span class="tag">Python</span>
+<span class="tag">FastAPI</span>
+<span class="tag">SQLite</span>
+<span class="tag">Pydantic</span>
+<span class="tag">API</span>
+</div>
+<div class="impact">Documented endpoints through Swagger and deployed an API demonstration on Render.</div>
+<div class="links">
+<a class="text-link" href="https://github.com/aoadenus/smart-bakery-api" target="_blank" rel="noopener noreferrer">GitHub repository ↗</a>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-top">
+<span class="kind">Data visualization</span>
+<span class="icon" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+<path d="M4 20h16M7 17v-5m5 5V8m5 9V4M5 8l7-5 6 0"/>
+</svg>
+</span>
+</div>
+    <div class="card-body">
+<p class="small" style="margin-bottom:.45rem">2026 · Individual project</p>
+<h3>Brazil Agribusiness Dashboard</h3>
+<p>Interactive research-data dashboard exploring Brazilian production and export trends with a focus on making complex agriculture statistics easier to interpret.</p>
+<div class="tags">
+<span class="tag">React</span>
+<span class="tag">JavaScript</span>
+<span class="tag">Charts</span>
+<span class="tag">USDA data</span>
+</div>
+<div class="impact">Converts USDA-based data and industry research into visual comparisons.</div>
+<div class="links">
+<a class="text-link" href="https://github.com/aoadenus/agribusiness-dashboard" target="_blank" rel="noopener noreferrer">GitHub repository ↗</a>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-top">
+<span class="kind">Industry research</span>
+<span class="icon" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+<circle cx="12" cy="12" r="9"/>
+<ellipse cx="12" cy="12" rx="4" ry="9"/>
+<path d="M3 12h18M5 6h14M5 18h14"/>
+</svg>
+</span>
+</div>
+    <div class="card-body">
+<p class="small" style="margin-bottom:.45rem">2026 · Research project</p>
+<h3>Brazil Agriculture Digital Transformation</h3>
+<p>Examined how enterprise technology, AI and IoT could affect agribusiness productivity, supply chains and sustainability in Brazil.</p>
+<div class="tags">
+<span class="tag">Research</span>
+<span class="tag">Agribusiness</span>
+<span class="tag">AI / IoT</span>
+<span class="tag">Supply chains</span>
+</div>
+<div class="impact">A research project—presented separately from implemented software.</div>
+<div class="links">
+<a class="text-link" href="https://github.com/aoadenus/brazil-agriculture-digital-transformation" target="_blank" rel="noopener noreferrer">GitHub repository ↗</a>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-top">
+<span class="kind">Data visualization</span>
+<span class="icon" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+<path d="M3 3v18h18M7 17v-5m5 5V8m5 9V4"/>
+</svg>
+</span>
+</div>
+    <div class="card-body">
+<p class="small" style="margin-bottom:.45rem">2025 · Individual analytics project</p>
+<h3>Livestock Revenue Visualization</h3>
+<p>Created Tableau visualizations using USDA Census of Agriculture data to examine livestock revenues by farm scale and production category.</p>
+<div class="tags">
+<span class="tag">Tableau</span>
+<span class="tag">USDA Census</span>
+<span class="tag">Analytics</span>
+</div>
+<div class="impact">Highlights exploratory analysis and visual communication.</div>
+<div class="links">
+<a class="text-link" href="https://github.com/aoadenus/livestock-revenue-data-visualization" target="_blank" rel="noopener noreferrer">GitHub repository ↗</a>
+</div>
+</div>
+</article>
+</div>
+<div class="notice" style="margin-top:2rem">
+<strong>About project evidence:</strong> These are academic, personal and hackathon projects—not claims of production enterprise deployment. Team contributions are labeled, and some academic artifacts are available upon request.</div>
+</div>
+</section>
+<section class="section activity" data-github-activity hidden aria-labelledby="github-heading">
+<div class="container">
+      <div class="activity-head">
+<div>
+<span class="eyebrow">From GitHub</span>
+<h2 id="github-heading">The latest in my repositories.</h2>
+<p>See recent code activity for the public projects featured here.</p>
+</div>
+      <button class="btn btn-outline" type="button" data-github-load>Check latest activity ↗</button>
+</div>
+      <p data-github-status role="status" aria-live="polite" aria-atomic="true">Updates load when you choose to check.</p>
+<ul data-github-list hidden>
+</ul>
     </div>
-  </div>
-
-  <div class="proj-list">
-
-    <!-- 1 -->
-    <div class="pcard reveal">
-      <div class="pcard-visual">
-        <span class="pcard-season-badge">Spring 2026</span>
-        <div class="pcard-icon">🩺</div>
-        <div class="pcard-num-bg">01</div>
-      </div>
-      <div class="pcard-body">
-        <div class="pcard-season">Spring 2026 · Lead Developer &amp; UX Coordinator · Hackathon Team of 3</div>
-        <h2 class="pcard-title">HealthAuthAI</h2>
-        <p class="pcard-desc">An AI-powered prior authorization assistant built with Base44 for the FITP × Cardinal Health Hackathon, generating PA letters, payer summaries, denial-risk scores, appeal drafts, audit trails, and patient-facing disposal guidance for simulated specialty pharmacy cases.</p>
-        <div class="ptags">
-          <span class="ptag pt-v">Base44</span>
-          <span class="ptag pt-v">AI Prompt Engineering</span>
-          <span class="ptag pt-g">Healthcare Technology</span>
-          <span class="ptag pt-b">UX Design</span>
-          <span class="ptag pt-p">Workflow Automation</span>
-        </div>
-        <a href="https://original-smart-auth-flow.base44.app/case-input" target="_blank" rel="noopener" class="proj-link">View Live Demo ↗</a>
-      </div>
-    </div>
-
-    <!-- 2 -->
-    <div class="pcard reveal">
-      <div class="pcard-visual">
-        <span class="pcard-season-badge">Spring 2026</span>
-        <div class="pcard-icon">🏨</div>
-        <div class="pcard-num-bg">02</div>
-      </div>
-      <div class="pcard-body">
-        <div class="pcard-season">Spring 2026 · Python · Data Analytics</div>
-        <h2 class="pcard-title">Hotel Operations Analytics Dashboard</h2>
-        <p class="pcard-desc">An interactive Streamlit dashboard built with Python and Plotly that transforms raw booking data into real-time operational KPIs like RevPAR and ADR to support management decision-making.</p>
-        <div class="ptags">
-          <span class="ptag pt-v">Python</span>
-          <span class="ptag pt-v">Streamlit</span>
-          <span class="ptag pt-g">Plotly</span>
-          <span class="ptag pt-g">pandas</span>
-          <span class="ptag pt-b">NumPy</span>
-        </div>
-        <a href="https://github.com/aoadenus/hotel-operations-analytics-dashboard" target="_blank" rel="noopener" class="proj-link">View on GitHub ↗</a>
-      </div>
-    </div>
-
-    <!-- 3 -->
-    <div class="pcard reveal">
-      <div class="pcard-visual">
-        <span class="pcard-season-badge">Spring 2026</span>
-        <div class="pcard-icon">🍞</div>
-        <div class="pcard-num-bg">03</div>
-      </div>
-      <div class="pcard-body">
-        <div class="pcard-season">Spring 2026 · FastAPI · Backend</div>
-        <h2 class="pcard-title">Smart Bakery REST API</h2>
-        <p class="pcard-desc">A backend FastAPI and SQLite3 system that automates inventory management through a normalized relational database and real-time transaction logic.</p>
-        <div class="ptags">
-          <span class="ptag pt-v">FastAPI</span>
-          <span class="ptag pt-v">Python</span>
-          <span class="ptag pt-g">SQLite</span>
-          <span class="ptag pt-g">Pydantic</span>
-          <span class="ptag pt-b">Render</span>
-        </div>
-        <a href="https://github.com/aoadenus/smart-bakery-api" target="_blank" rel="noopener" class="proj-link">View on GitHub ↗</a>
-      </div>
-    </div>
-
-    <!-- 4 -->
-    <div class="pcard reveal">
-      <div class="pcard-visual">
-        <span class="pcard-season-badge">Fall 2025</span>
-        <div class="pcard-icon">🎂</div>
-        <div class="pcard-num-bg">04</div>
-      </div>
-      <div class="pcard-body">
-        <div class="pcard-season">Fall 2025 · Lead UI Developer · Team of 9</div>
-        <h2 class="pcard-title">Emily Bakes Cakes — Web Portal</h2>
-        <p class="pcard-desc">A comprehensive business web application featuring a custom ordering system and five role-based staff dashboards to streamline bakery operations from customer checkout to financial reporting.</p>
-        <div class="ptags">
-          <span class="ptag pt-y">HTML5</span>
-          <span class="ptag pt-y">CSS3</span>
-          <span class="ptag pt-p">JavaScript</span>
-          <span class="ptag pt-p">Chart.js</span>
-          <span class="ptag pt-b">Figma</span>
-        </div>
-        <a href="https://github.com/aoadenus/emily-bakes-cakes-web-portal" target="_blank" rel="noopener" class="proj-link">View on GitHub ↗</a>
-      </div>
-    </div>
-
-    <!-- 5 -->
-    <div class="pcard reveal">
-      <div class="pcard-visual">
-        <span class="pcard-season-badge">Spring 2026</span>
-        <div class="pcard-icon">🌱</div>
-        <div class="pcard-num-bg">05</div>
-      </div>
-      <div class="pcard-body">
-        <div class="pcard-season">Spring 2026 · React · Data Visualization</div>
-        <h2 class="pcard-title">Agribusiness Dashboard</h2>
-        <p class="pcard-desc">A React-based data visualization tool that converts complex USDA and CONAB agricultural research into interactive charts tracking Brazil's soybean production and global market dominance.</p>
-        <div class="ptags">
-          <span class="ptag pt-p">React</span>
-          <span class="ptag pt-p">JavaScript</span>
-          <span class="ptag pt-g">Chart.js</span>
-          <span class="ptag pt-b">USDA Data</span>
-        </div>
-        <a href="https://github.com/aoadenus/agribusiness-dashboard" target="_blank" rel="noopener" class="proj-link">View on GitHub ↗</a>
-      </div>
-    </div>
-
-    <!-- 6 -->
-    <div class="pcard reveal">
-      <div class="pcard-visual">
-        <span class="pcard-season-badge">Spring 2026</span>
-        <div class="pcard-icon">🌍</div>
-        <div class="pcard-num-bg">06</div>
-      </div>
-      <div class="pcard-body">
-        <div class="pcard-season">Spring 2026 · Research · Data Analysis</div>
-        <h2 class="pcard-title">Brazil Agriculture Digital Transformation</h2>
-        <p class="pcard-desc">A detailed analytical research paper exploring the impact of AI, IoT, and agentic systems on Brazilian agricultural productivity, sustainability, and global supply chain logistics.</p>
-        <div class="ptags">
-          <span class="ptag pt-g">Research</span>
-          <span class="ptag pt-g">AI/IoT</span>
-          <span class="ptag pt-b">Supply Chain</span>
-          <span class="ptag pt-v">Data Analysis</span>
-        </div>
-        <a href="https://github.com/aoadenus/brazil-agriculture-digital-transformation" target="_blank" rel="noopener" class="proj-link">View on GitHub ↗</a>
-      </div>
-    </div>
-
-    <!-- 7 -->
-    <div class="pcard reveal">
-      <div class="pcard-visual">
-        <span class="pcard-season-badge">2025</span>
-        <div class="pcard-icon">🐄</div>
-        <div class="pcard-num-bg">07</div>
-      </div>
-      <div class="pcard-body">
-        <div class="pcard-season">2025 · Tableau · Data Visualization</div>
-        <h2 class="pcard-title">Livestock Revenue Data Visualization</h2>
-        <p class="pcard-desc">A Tableau-driven data analysis of 2022 USDA Census data that visualizes the economic relationship between farm scale and revenue distribution across different livestock categories.</p>
-        <div class="ptags">
-          <span class="ptag pt-b">Tableau</span>
-          <span class="ptag pt-g">USDA Data</span>
-          <span class="ptag pt-v">Data Viz</span>
-          <span class="ptag pt-y">Census 2022</span>
-        </div>
-        <a href="https://github.com/aoadenus/livestock-revenue-data-visualization" target="_blank" rel="noopener" class="proj-link">View on GitHub ↗</a>
-      </div>
-    </div>
-
-  </div>
+</section>
 </main>
-
-<footer>
-  <span class="footer-left">Tutu Adenusi</span>
-  <ul class="footer-links">
-    <li><a href="about.html">About</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="experience.html">Experience</a></li>
-    <li><a href="skills.html">Skills</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <div class="footer-copy">© 2026 Adetutu Adenusi · University of Houston · B.S. Computer Information Systems · Class of 2027</div>
+<footer class="footer">
+<div class="container">
+<div class="footer-inner">
+<div>
+<strong>Adetutu (Tutu) Adenusi</strong>
+<p style="margin:.25rem 0 0">Business systems • Enterprise technology • Data</p>
+</div>
+<div class="footer-links">
+<a href="projects.html">Projects</a>
+<a href="experience.html">Experience</a>
+<a href="skills.html">Skills</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+<small>© 2026 Adetutu Adenusi · University of Houston · Expected May 2027</small>
+<span class="affiliation-note">Personal portfolio · University of Houston student. Not an official university website.</span>
+</div>
 </footer>
-
-<script>
-  const cur=document.getElementById('cur');let mx=0,my=0,cx=0,cy=0;
-  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
-  (function tick(){cx+=(mx-cx)*.15;cy+=(my-cy)*.15;cur.style.left=cx+'px';cur.style.top=cy+'px';requestAnimationFrame(tick)})();
-  document.querySelectorAll('a,button,.hoverable').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'))});
-  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.08});
-  document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(r=>obs.observe(r));
-</script>
 </body>
 </html>

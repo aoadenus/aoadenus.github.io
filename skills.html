@@ -1,155 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Skills · Tutu Adenusi</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
-  <style>
-    .sk-hero{background:var(--cream);padding:9rem 3.5rem 4rem;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
-    .skb1{width:400px;height:400px;background:rgba(196,160,255,.15);top:-80px;right:0;animation:blob 12s ease-in-out infinite alternate}
-    .sk-hero-inner{position:relative;z-index:2;max-width:680px}
-    .sk-hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,6rem);font-weight:900;color:var(--plum);line-height:1.1;margin-bottom:1.4rem}
-    .sk-hero h1 em{font-style:italic;color:var(--violet)}
-    .sk-hero p{font-size:1rem;color:var(--muted);line-height:1.8;max-width:480px;font-weight:300}
-
-    /* SKILLS TABLE */
-    .sk-body{padding:4rem 3.5rem}
-    .sk-table{border:1.5px solid var(--border);border-radius:24px;overflow:hidden;margin-bottom:4rem}
-    .sk-row{display:grid;grid-template-columns:220px 1fr;border-bottom:1px solid var(--border);transition:background .2s}
-    .sk-row:last-child{border-bottom:none}
-    .sk-row:hover{background:var(--ll)}
-    .sk-cat{padding:2rem 2.5rem;font-family:'Syne',sans-serif;font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--violet);display:flex;align-items:center;border-right:1px solid var(--border);background:rgba(240,232,255,.4)}
-    .sk-items{padding:2rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
-    .chip{font-family:'Syne',sans-serif;font-size:.76rem;font-weight:600;padding:.38rem .9rem;border-radius:100px;transition:all .2s;border:1.5px solid transparent}
-    .chip:hover{transform:scale(1.05)}
-    .c-default{background:var(--ll);color:var(--ps);border-color:var(--lm)}
-    .c-lang{background:var(--mint);color:#1a6b4a;border-color:rgba(94,203,161,.4)}
-    .c-ent{background:var(--peach);color:#9a4020;border-color:rgba(245,168,130,.4)}
-    .c-concept{background:var(--sky);color:#1a4a8a;border-color:rgba(142,181,232,.4)}
-    .c-cert{background:var(--yellow);color:#7a5c0a;border-color:rgba(232,208,122,.4)}
-
-    /* CERT SECTION */
-    .cert-section{padding:0 3.5rem 4rem}
-    .cert-card{background:var(--plum);border-radius:24px;padding:3rem;display:flex;align-items:center;gap:2.5rem;max-width:700px}
-    .cert-icon-big{font-size:3.5rem}
-    .cert-name{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:#fff;margin-bottom:.4rem;line-height:1.2}
-    .cert-issuer{font-family:'Syne',sans-serif;font-size:.82rem;color:var(--lm);font-weight:600;letter-spacing:.04em}
-    .cert-date{font-family:'Syne',sans-serif;font-size:.75rem;color:rgba(255,255,255,.4);margin-top:.3rem}
-
-    @media(max-width:900px){.sk-hero,.sk-body,.cert-section{padding-left:1.5rem;padding-right:1.5rem}.sk-row{grid-template-columns:1fr}.sk-cat{border-right:none;border-bottom:1px solid var(--border)}.cert-card{flex-direction:column;gap:1.5rem}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Skills &amp; Certifications | Adetutu (Tutu) Adenusi</title>
+<meta name="description" content="SAP business process certification, ITIL 4 Foundation, business systems analysis, Python, SQL, data tools and application development.">
+<meta name="theme-color" content="#c8102e">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Adetutu Adenusi Portfolio">
+<meta property="og:title" content="Skills &amp; Certifications | Adetutu Adenusi">
+<meta property="og:description" content="SAP business process certification, ITIL 4 Foundation, business systems analysis, Python, SQL, data tools and application development.">
+<meta property="og:url" content="https://aoadenus.github.io/skills.html">
+<link rel="canonical" href="https://aoadenus.github.io/skills.html">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="style.css">
+<script src="assets/js/site.js" defer>
+</script>
 </head>
 <body>
-<div id="cur"></div>
-<nav>
-  <a href="index.html" class="logo">Tutu ✦</a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="experience.html">Experience</a></li>
-    <li><a href="skills.html" class="active">Skills</a></li>
-    <li><a href="contact.html" class="nav-cta">Contact</a></li>
-  </ul>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container header-inner">
+<a class="brand" href="index.html" aria-label="Tutu Adenusi, homepage">
+<span class="brand-mark" aria-hidden="true">AA</span>
+<span class="brand-name">
+<strong>TUTU ADENUSI</strong>
+<small>SYSTEMS · DATA · ENTERPRISE</small>
+</span>
+</a>
+<nav class="desktop-nav" aria-label="Main navigation">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="projects.html">Projects</a>
+<a href="experience.html">Experience</a>
+<a href="skills.html" aria-current="page">Skills</a>
+<a href="contact.html" class="nav-contact">Contact</a>
 </nav>
-
-<main>
-  <div class="sk-hero">
-    <div class="blob skb1"></div>
-    <div class="sk-hero-inner">
-      <div class="eyebrow anim anim-1">04 — Skills</div>
-      <h1 class="anim anim-2">What I <em>Know.</em></h1>
-      <p class="anim anim-3">From SAP enterprise systems to REST APIs, database design to data visualization — my technical toolkit spans the full intersection of business and technology.</p>
-    </div>
-  </div>
-
-  <div class="sk-body">
-    <div class="eyebrow reveal" style="margin-bottom:1.5rem">Technical Skills</div>
-    <div class="sk-table reveal">
-      <div class="sk-row">
-        <div class="sk-cat">Languages</div>
-        <div class="sk-items">
-          <span class="chip c-lang">Python</span>
-          <span class="chip c-lang">SQL</span>
-          <span class="chip c-lang">JavaScript</span>
-          <span class="chip c-lang">HTML / CSS</span>
-        </div>
-      </div>
-      <div class="sk-row">
-        <div class="sk-cat">Frameworks &amp; Tools</div>
-        <div class="sk-items">
-          <span class="chip c-default">FastAPI</span>
-          <span class="chip c-default">Streamlit</span>
-          <span class="chip c-default">Chart.js</span>
-          <span class="chip c-default">Plotly</span>
-          <span class="chip c-default">Tableau</span>
-          <span class="chip c-default">SQLite</span>
-          <span class="chip c-default">GitHub</span>
-          <span class="chip c-default">pandas</span>
-          <span class="chip c-default">NumPy</span>
-        </div>
-      </div>
-      <div class="sk-row">
-        <div class="sk-cat">Enterprise &amp; Business Systems</div>
-        <div class="sk-items">
-          <span class="chip c-ent">SAP S/4HANA (FICO)</span>
-          <span class="chip c-ent">SAP Activate</span>
-          <span class="chip c-ent">OPERA PMS</span>
-          <span class="chip c-ent">IHG Merlin</span>
-          <span class="chip c-ent">Hilton OnQ</span>
-          <span class="chip c-ent">Wyndham SynXis</span>
-        </div>
-      </div>
-      <div class="sk-row">
-        <div class="sk-cat">Concepts</div>
-        <div class="sk-items">
-          <span class="chip c-concept">Systems Analysis &amp; Design</span>
-          <span class="chip c-concept">Data Validation</span>
-          <span class="chip c-concept">Database Design</span>
-          <span class="chip c-concept">Network Analysis</span>
-          <span class="chip c-concept">REST API Development</span>
-          <span class="chip c-concept">UAT</span>
-          <span class="chip c-concept">ERD Design</span>
-          <span class="chip c-concept">Process Documentation</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="cert-section reveal">
-    <div class="eyebrow" style="margin-bottom:1.5rem">Certification</div>
-    <div class="cert-card hoverable">
-      <div class="cert-icon-big">🏅</div>
-      <div>
-        <div class="cert-name">SAP Learning Journey:<br/>Discovering SAP</div>
-        <div class="cert-issuer">Issued by SAP</div>
-        <div class="cert-date">March 2026</div>
-      </div>
-    </div>
-  </div>
+<nav class="mobile-nav" aria-label="Mobile navigation">
+<details>
+<summary>Menu</summary>
+<ul>
+<li>
+<a href="index.html">Home</a>
+</li>
+<li>
+<a href="about.html">About</a>
+</li>
+<li>
+<a href="projects.html">Projects</a>
+</li>
+<li>
+<a href="experience.html">Experience</a>
+</li>
+<li>
+<a href="skills.html" aria-current="page">Skills</a>
+</li>
+<li>
+<a href="contact.html">Contact</a>
+</li>
+</ul>
+</details>
+</nav>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<section class="page-intro">
+<div class="container">
+<span class="eyebrow">04 — Skills</span>
+<h1>What I <span class="italic">use.</span>
+</h1>
+<p class="lead">My technical toolkit supports a central goal: translating business requirements into systems and information people can use. Practical projects demonstrate where I have applied these tools.</p>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<h2 class="sr-only">Technical toolkit</h2>
+<div class="two-up">
+<div class="skill-block">
+<h3>Business systems analysis</h3>
+<p class="small">Requirements translation, rules and workflow design</p>
+<div class="chip-grid">
+<span class="chip">Business rules</span>
+<span class="chip">Requirements analysis</span>
+<span class="chip">Process documentation</span>
+<span class="chip">ERD / Crow’s Foot</span>
+<span class="chip">Normalization to 3NF</span>
+<span class="chip">Systems design</span>
+</div>
+</div>
+<div class="skill-block">
+<h3>Enterprise processes &amp; service management</h3>
+<p class="small">Supervised enterprise exposure and credential-based knowledge</p>
+<div class="chip-grid">
+<span class="chip">SAP S/4HANA Finance (FI/CO)</span>
+<span class="chip">End-to-end SAP processes</span>
+<span class="chip">SAP Activate concepts</span>
+<span class="chip">ITIL 4 concepts</span>
+<span class="chip">Operational handoffs</span>
+</div>
+</div>
+<div class="skill-block">
+<h3>Data &amp; reporting</h3>
+<p class="small">Analysis, cleaning, visualization and business KPIs</p>
+<div class="chip-grid">
+<span class="chip">SQL</span>
+<span class="chip">Python</span>
+<span class="chip">MySQL</span>
+<span class="chip">AWS RDS</span>
+<span class="chip">pandas / NumPy</span>
+<span class="chip">Streamlit</span>
+<span class="chip">Plotly</span>
+<span class="chip">Tableau</span>
+</div>
+</div>
+<div class="skill-block">
+<h3>Development &amp; collaboration</h3>
+<p class="small">Project implementation and user-facing prototypes</p>
+<div class="chip-grid">
+<span class="chip">FastAPI</span>
+<span class="chip">SQLite</span>
+<span class="chip">Pydantic</span>
+<span class="chip">REST APIs</span>
+<span class="chip">HTML / CSS / JavaScript</span>
+<span class="chip">Figma</span>
+<span class="chip">Git / GitHub</span>
+<span class="chip">UX prototyping</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section section-alt">
+<div class="container">
+<span class="eyebrow">Professional certifications</span>
+<h2>Verified <span class="italic">foundations.</span>
+</h2>
+<div class="two-up">
+<div class="panel mint">
+<h3>SAP Certified – Implementation Consultant</h3>
+<p>End-to-End Business Processes for SAP Business Suite</p>
+<p class="small">Earned October 2026</p>
+</div>
+<div class="panel soft">
+<h3>ITIL 4 Foundation</h3>
+<p>IT Service Management · PeopleCert</p>
+<p class="small">Earned September 2026</p>
+</div>
+</div>
+<p class="small" style="margin-top:1rem">Skills and certifications reflect education, supervised exposure and projects; they are not a claim of production SAP ownership or professional service-management tenure.</p>
+</div>
+</section>
 </main>
-
-<footer>
-  <span class="footer-left">Tutu Adenusi</span>
-  <ul class="footer-links">
-    <li><a href="about.html">About</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="experience.html">Experience</a></li>
-    <li><a href="skills.html">Skills</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <div class="footer-copy">© 2026 Adetutu Adenusi · University of Houston · B.S. Computer Information Systems · Class of 2027</div>
+<footer class="footer">
+<div class="container">
+<div class="footer-inner">
+<div>
+<strong>Adetutu (Tutu) Adenusi</strong>
+<p style="margin:.25rem 0 0">Business systems • Enterprise technology • Data</p>
+</div>
+<div class="footer-links">
+<a href="projects.html">Projects</a>
+<a href="experience.html">Experience</a>
+<a href="skills.html">Skills</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+<small>© 2026 Adetutu Adenusi · University of Houston · Expected May 2027</small>
+<span class="affiliation-note">Personal portfolio · University of Houston student. Not an official university website.</span>
+</div>
 </footer>
-<script>
-  const cur=document.getElementById('cur');let mx=0,my=0,cx=0,cy=0;
-  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
-  (function tick(){cx+=(mx-cx)*.15;cy+=(my-cy)*.15;cur.style.left=cx+'px';cur.style.top=cy+'px';requestAnimationFrame(tick)})();
-  document.querySelectorAll('a,button,.hoverable,.chip').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'))});
-  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.08});
-  document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(r=>obs.observe(r));
-</script>
 </body>
 </html>
